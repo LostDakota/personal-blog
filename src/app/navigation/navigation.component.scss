@@ -1,0 +1,21 @@
+nav{
+    text-align: center;
+    ul{
+        padding: 0!important;
+        list-style: none;
+
+        li{
+            a{
+                padding-bottom: .5rem;
+                width: 100%;
+                &.active{
+                    border-bottom: 1px solid #333;
+                }
+            }
+        }
+    }
+    a{
+        text-decoration: none;
+        color: #333;
+    }    
+}
