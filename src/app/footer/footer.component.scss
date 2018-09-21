@@ -6,11 +6,15 @@ footer{
     width: 100vw;
     background-color: #333;
     color: #EEE;
-    padding: .5rem 0;
+    padding: .5rem 0 0;
     text-align: center;    
 
     i{
         margin: 0 1rem;
-        font-size: 2rem;
+        font-size: 20px;
+    }
+
+    span{
+        font-size: .7rem;
     }
 }

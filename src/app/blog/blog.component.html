@@ -1,3 +1,14 @@
-<p>
-  Coming soon!
-</p>
+<div class="row">
+  <div class="col" *ngIf="posts$.length > 0">
+    <div class="card" *ngFor="let post of posts$">
+      <!-- <i class="fas fa-trash delete-post" (click)="deletePost(post._id)"></i> -->
+      <h2>{{ post.title }}</h2>
+      <div [innerHTML]="post.content"></div>
+    </div>
+  </div>
+  <div class="col" *ngIf="posts$.length === 0">
+    <div class="card">
+      <p>There aren't any post here yet.</p>
+    </div>
+  </div>
+</div>
