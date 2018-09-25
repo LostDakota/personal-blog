@@ -3,6 +3,6 @@ export class Post {
     title: string;
     content: string;
     updatedAt: string;
-    createdBy: string;    
+    createdAt: string;    
     tags: string[];
 }
