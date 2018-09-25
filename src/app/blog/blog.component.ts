@@ -10,7 +10,7 @@ import { Post } from '../models/post.model';
 
 export class BlogComponent implements OnInit {
 
-  posts$: Post[] = [];
+  posts$: Post[] = [];  
 
   constructor(private data: DataService) { }
 
