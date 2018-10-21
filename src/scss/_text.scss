@@ -20,3 +20,22 @@ p{
 .color-link{
     color: $lightblue;
 }
+
+.form-group{
+    .form-control{
+        padding: 5px;
+        border: 1px solid $lightgray;
+        border-radius: 3px;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    button{
+        float: right;
+    }
+}
+
+.fa-trash{
+    float: right;
+    color: $lightblue;
+}

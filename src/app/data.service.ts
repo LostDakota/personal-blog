@@ -17,4 +17,12 @@ export class DataService {
   getPost(postId): Observable<Post>{
     return this.http.get<Post>('https://api.mika.house/post/' + postId)
   }
+
+  createPost(post: Post): Observable<Post>{
+    return this.http.post<Post>('https://api.mika.house/post', post);
+  }
+
+  deletePost(postId): Observable<any>{
+    return this.http.post<any>('https://api.mika.house/post/' + postId, {});
+  }
 }
