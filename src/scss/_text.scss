@@ -24,18 +24,25 @@ p{
 .form-group{
     .form-control{
         padding: 5px;
-        border: 1px solid $lightgray;
+        border: 1px solid $lightestgray;
         border-radius: 3px;
         width: 100%;
         margin-bottom: 1rem;
     }
-    
+
     button{
         float: right;
+        background: $white;
+        border: 1px solid $lightestgray;
+        border-radius: 3px;
     }
 }
 
 .fa-trash{
     float: right;
     color: $lightblue;
+}
+
+.ql-editor{
+    min-height: 300px;
 }

@@ -25,4 +25,8 @@ export class DataService {
   deletePost(postId): Observable<any>{
     return this.http.post<any>('https://api.mika.house/post/' + postId, {});
   }
+
+  uploadImage(form): Observable<any>{
+    return this.http.post<any>('https://api.mika.house/image', form);
+  }
 }
