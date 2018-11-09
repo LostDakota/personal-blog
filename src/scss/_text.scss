@@ -46,3 +46,10 @@ p{
 .ql-editor{
     min-height: 300px;
 }
+
+.ql-syntax{
+    border: 1px solid $lightestgray;
+    background: #FEFEFE;
+    padding: 0 .5rem;
+    border-radius: 3px;
+}
