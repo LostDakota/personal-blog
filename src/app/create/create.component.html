@@ -16,10 +16,10 @@
           </div>
       </div>
       <div class="form-group">
-        <input placeholder="Tags(comma seperated)" type="text" formControlName="tags" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" />
+        <input placeholder="Tags (comma seperated)" type="text" formControlName="tags" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" />
       </div>
       <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary"><span *ngIf="loading"><i class="fa fa-gear fa-spin"></i></span>Submit</button>
+        <button [disabled]="loading" class="btn btn-primary btn-submit"><span *ngIf="loading"><i class="fa fa-gear fa-spin"></i></span>Submit</button>
       </div>
     </form>
   </div>

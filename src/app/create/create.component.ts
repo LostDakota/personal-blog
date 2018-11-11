@@ -24,7 +24,6 @@ export class CreateComponent implements OnInit {
       container: [
         ["bold", "italic", "underline", "strike"],        
         [{"list": "ordered"}, {"list": "bullet"}],
-        [{"align": []}],
         ["blockquote", "code-block"],
         ["link", "image"]
       ]
