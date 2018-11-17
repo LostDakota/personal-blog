@@ -9,6 +9,7 @@ import { PostComponent } from './post/post.component';
 import { LoginComponent } from './login/login.component';
 import { CreateComponent } from './create/create.component';
 import { AuthGuardService } from './auth-guard.service';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
     component: PostComponent
   },
   {
+    path: 'blog/edit/:id',
+    component: EditComponent
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
@@ -43,7 +48,7 @@ const routes: Routes = [
   {
     path: '**',
     component: HomeComponent
-  }  
+  }
 ];
 
 @NgModule({

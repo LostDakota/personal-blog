@@ -17,6 +17,7 @@ import { PostComponent } from './post/post.component';
 import { LoginComponent } from './login/login.component';
 import { CreateComponent } from './create/create.component';
 import { AuthGuardService } from './auth-guard.service';
+import { EditComponent } from './edit/edit.component';
 
 export function tokenGetter(){
   return localStorage.getItem('token');
@@ -33,7 +34,8 @@ export function tokenGetter(){
     FooterComponent,
     PostComponent,
     LoginComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

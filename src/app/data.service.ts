@@ -22,6 +22,10 @@ export class DataService {
     return this.http.post<Post>('https://api.mika.house/post', post);
   }
 
+  updatePost(post: Post): Observable<Post>{
+    return this.http.put<Post>('https://api.mika.house/post/' + post._id, post);
+  }
+
   deletePost(postId): Observable<any>{
     return this.http.post<any>('https://api.mika.house/post/' + postId, {});
   }
