@@ -72,7 +72,7 @@ export class CreateComponent implements OnInit {
   registerImageHandler(event: any){
     event.getModule('toolbar').addHandler('image', this.imageHandler(event));
     setTimeout(() => {
-      document.querySelector('button.ql-image').addEventListener('click', (e) => {
+      document.querySelector('button.ql-image').addEventListener('click', (e) => {        
         e.preventDefault();
         document.getElementById('image-upload').click();
       });
@@ -91,6 +91,7 @@ export class CreateComponent implements OnInit {
         fileInput.classList.add('ql-image');
         fileInput.setAttribute('id', 'image-upload');
         fileInput.style.display = "none";
+        editor.container.appendChild(fileInput);
 
         fileInput.addEventListener('change', function () {          
             editor.container.classList.add('uploading');
@@ -123,10 +124,8 @@ export class CreateComponent implements OnInit {
                     var len = editor.getLength();
                     editor.setSelection(len, 0, 'user');
                     formData.delete('image');                    
-          });
-          editor.container.appendChild(fileInput);
-        }
-        fileInput.click();
+          });          
+        }        
       });
     }
   }
