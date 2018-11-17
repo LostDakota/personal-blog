@@ -38,9 +38,10 @@ p{
     }
 }
 
-.fa-trash{
+.fa-trash, .fa-edit{
     float: right;
     color: $lightblue;
+    margin-left: 1rem;
 }
 
 .ql-editor{
