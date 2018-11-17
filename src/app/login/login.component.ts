@@ -29,6 +29,10 @@ export class LoginComponent implements OnInit {
     });
 
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+    setTimeout(function(){
+      document.getElementById('user-name').focus();
+    }, 100)
   }
 
   get f() {return this.loginForm.controls;}
@@ -54,5 +58,4 @@ export class LoginComponent implements OnInit {
         }
       )
   }
-
 }

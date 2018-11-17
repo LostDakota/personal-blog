@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="form-group">
-          <quill-editor [modules]="modules" (onEditorCreated)="registerImageHandler($event)" placeholder="Write something" formControlName="content" [ngClass]="{ 'is-invalid': submitted && f.content.errors }"></quill-editor>
+          <quill-editor [modules]="modules" placeholder="Write something" formControlName="content" [ngClass]="{ 'is-invalid': submitted && f.content.errors }"></quill-editor>
           <br />
           <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
             <div *ngIf="f.content.errors.required">Body is required</div>
