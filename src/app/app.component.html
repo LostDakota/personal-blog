@@ -1,3 +1,7 @@
+<div *ngIf="isAuthenticated" class="logout">
+  <i class="fa fa-external-link-square-alt clickable" (click)="logout()"></i>
+</div>
+
 <div id="content">
   <div id="header" [class.admin]="isAuthenticated">
     <app-navigation></app-navigation>

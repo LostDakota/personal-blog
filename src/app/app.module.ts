@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -16,7 +16,6 @@ import { FooterComponent } from './footer/footer.component';
 import { PostComponent } from './post/post.component';
 import { LoginComponent } from './login/login.component';
 import { CreateComponent } from './create/create.component';
-import { AuthGuardService } from './auth-guard.service';
 import { EditComponent } from './edit/edit.component';
 
 export function tokenGetter(){

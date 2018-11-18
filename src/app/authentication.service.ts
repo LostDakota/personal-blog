@@ -6,9 +6,13 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthenticationService {
 
-  constructor(private http: HttpClient, private jwtHelper: JwtHelperService) { }
+  constructor(
+    private http: HttpClient, 
+    private jwtHelper: JwtHelperService
+  ) { };
 
   login(username: string, password: string){
     return this.http.post<any>('https://api.mika.house/login', {username: username, password: password})

@@ -36,7 +36,7 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router, 
     private authenticationService: AuthenticationService
-  ) { }
+  ) { };
 
   ngOnInit() {
     this.isAuthenticated = this.authenticationService.isAuthenticated();

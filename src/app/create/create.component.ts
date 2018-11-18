@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { Post } from '../models/post.model';
-import { Delta } from 'quill-delta';
-import { HttpClient } from '@angular/common/http';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-create',
@@ -34,7 +31,7 @@ export class CreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private dataService: DataService
-  ) { }
+  ) { };
 
   ngOnInit() {
     this.newPostForm = this.formBuilder.group({
@@ -61,7 +58,7 @@ export class CreateComponent implements OnInit {
 
     this.dataService.createPost(this.post)
       .subscribe(data => {
-        this.router.navigate(['/blog/' + data._id]);
+        this.router.navigate(['/blog/' + data._id]);        
       },
       error => {
         this.loading = false;

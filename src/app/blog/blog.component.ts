@@ -12,7 +12,9 @@ export class BlogComponent implements OnInit {
 
   posts$: Post[] = [];  
 
-  constructor(private data: DataService) { }
+  constructor(
+    private data: DataService
+  ) { };
 
   ngOnInit() {
     this.data.getPosts()

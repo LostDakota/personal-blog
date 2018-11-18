@@ -12,9 +12,16 @@ export class AppComponent {
   isAuthenticated: boolean;
   title = 'developer-blog';
 
-  constructor(private authenticationService: AuthenticationService){}
+  constructor(
+    private authenticationService: AuthenticationService
+  ) {};
 
   ngOnInit(){
     this.isAuthenticated = this.authenticationService.isAuthenticated();
+  }
+
+  logout(){
+    localStorage.clear();
+    document.location.href = '/';
   }
 }

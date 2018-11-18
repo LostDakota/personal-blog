@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { AuthenticationService } from '../authentication.service';
@@ -9,21 +9,20 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./navigation.component.scss']
 })
 
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
 
   isAuthenticated: boolean;
   currentUrl: string;
 
-  constructor(private router: Router, private authenticationService: AuthenticationService) { 
+  constructor(
+    private router: Router, 
+    private authenticationService: AuthenticationService
+  ) { 
     this.isAuthenticated = this.authenticationService.isAuthenticated();
     router.events.pipe(
       filter((event:Event) => event instanceof NavigationEnd)
     ).subscribe(
       res => this.currentUrl = res["url"]
     )
-  }
-
-  ngOnInit() {
-  }
-
+  };
 }

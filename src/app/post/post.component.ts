@@ -14,10 +14,12 @@ export class PostComponent implements OnInit {
   post$: Post;
   isAuthenticated: boolean;
 
-  constructor(private data: DataService, 
+  constructor(
+    private data: DataService, 
     private route: ActivatedRoute, 
     private router: Router, 
-    private authenticationService: AuthenticationService) { }
+    private authenticationService: AuthenticationService
+  ) { };
 
   ngOnInit() {
     this.isAuthenticated = this.authenticationService.isAuthenticated();
