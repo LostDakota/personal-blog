@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { Post } from '../models/post.model';
-import { Delta } from 'quill';
+import { Delta } from 'quill-delta';
 import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
 
@@ -26,10 +26,7 @@ export class CreateComponent implements OnInit {
         [{"list": "ordered"}, {"list": "bullet"}],
         ["blockquote", "code-block"],
         ["link", "image"]
-      ],
-      handlers: {
-        'image': this.imageHandler
-      }
+      ]
     }
   }  
 
@@ -72,15 +69,15 @@ export class CreateComponent implements OnInit {
     );
   }
 
-  // registerImageHandler(event: any){
-  //   event.getModule('toolbar').addHandler('image', this.imageHandler(event));
-  //   setTimeout(() => {
-  //     document.querySelector('button.ql-image').addEventListener('click', (e) => {        
-  //       e.preventDefault();
-  //       document.getElementById('image-upload').click();
-  //     });
-  //   }, 500);    
-  // }
+  registerImageHandler(event: any){
+    event.getModule('toolbar').addHandler('image', this.imageHandler(event));    
+    setTimeout(() => {
+      document.querySelector('button.ql-image').addEventListener('click', (e) => {        
+        e.preventDefault();
+        document.getElementById('image-upload').click();
+      });
+    }, 500);    
+  }
 
   imageHandler(editor: any) {
     var formData = new FormData();
@@ -93,8 +90,7 @@ export class CreateComponent implements OnInit {
         fileInput.setAttribute('accept', 'image/png, image/jpeg, image/gif, video/mp4');
         fileInput.classList.add('ql-image');
         fileInput.setAttribute('id', 'image-upload');
-        fileInput.style.display = "none";
-        editor.container.appendChild(fileInput);
+        fileInput.style.display = "none";        
 
         fileInput.addEventListener('change', function () {          
             editor.container.classList.add('uploading');
@@ -106,30 +102,20 @@ export class CreateComponent implements OnInit {
                     autoplay: false
                 };
 
-                editor.insertText(initial, 'Loading...');
-
                 formData.append('image', fileInput.files[0]);
                 service.uploadImage(formData)
                   .subscribe(data => {
                     if(fileInput.files[0].type.indexOf('image') === 0){
-                      embed['image'] = data;
+                      editor.insertEmbed(editor.getSelection, 'image', 'https://api.mika.house/uploads/' + data);
                     } else {
                       embed['video'] = data;
                     }
-                    editor.updateContents(
-                      new Delta()
-                                .retain(initial)
-                                .delete(10)
-                                .insert(embed, videoControls)
-                            , 'user'
-                    );
-                    editor.container.classList.remove('uploading');
-                    var len = editor.getLength();
-                    editor.setSelection(len, 0, 'user');
-                    formData.delete('image');                    
-          });          
-        }        
+                    
+                    editor.setSelection(editor.getLength());
+          });
+        }
       });
+      editor.container.appendChild(fileInput);
     }
   }
 }
