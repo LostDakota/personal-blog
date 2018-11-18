@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 
+import { Summary } from './summary.pipe';
+
 export function tokenGetter(){
   return localStorage.getItem('token');
 }
@@ -34,7 +36,8 @@ export function tokenGetter(){
     PostComponent,
     LoginComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    Summary
   ],
   imports: [
     BrowserModule,
