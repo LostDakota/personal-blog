@@ -14,7 +14,10 @@ export class PostComponent implements OnInit {
   post$: Post;
   isAuthenticated: boolean;
 
-  constructor(private data: DataService, private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService) { }
+  constructor(private data: DataService, 
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
     this.isAuthenticated = this.authenticationService.isAuthenticated();
@@ -29,5 +32,9 @@ export class PostComponent implements OnInit {
       .subscribe(
         data => this.router.navigate(['/'])
       );
+  }
+
+  edit(postId){
+    this.router.navigate(['/blog/edit/' + postId]);
   }
 }

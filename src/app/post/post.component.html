@@ -2,7 +2,7 @@
   <div class="col">
     <div class="card">
       <span *ngIf="isAuthenticated"><i (click)="deletePost(post$?._id)" class="fa fa-trash"></i></span>
-      <a routerLink="/blog/edit/{{post$?._id}}" *ngIf="isAuthenticated"><i class="fa fa-edit"></i></a>
+      <span *ngIf="isAuthenticated"><i (click)="edit(post$?._id)" class="fa fa-edit"></i></span>
       <h2>{{ post$?.title }}</h2>      
       <h6>{{ post$?.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
       <div [innerHTML]="post$?.content"></div>
