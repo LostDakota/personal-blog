@@ -97,18 +97,12 @@ export class CreateComponent implements OnInit {
             if (fileInput.files !== null && fileInput.files[0] !== null) {
 
                 var initial = editor.getSelection().index;
-                var embed = {};
-                var videoControls = {
-                    autoplay: false
-                };
 
                 formData.append('image', fileInput.files[0]);
                 service.uploadImage(formData)
                   .subscribe(data => {
                     if(fileInput.files[0].type.indexOf('image') === 0){
-                      editor.insertEmbed(editor.getSelection, 'image', 'https://api.mika.house/uploads/' + data);
-                    } else {
-                      embed['video'] = data;
+                      editor.insertEmbed(initial, 'image', 'https://api.mika.house/uploads/' + data);
                     }
                     
                     editor.setSelection(editor.getLength());
