@@ -65,7 +65,8 @@ p{
 
 blockquote {
     border: 1px solid #CCC;
-    border-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
     border-left: 3px solid #AAA;
     padding: .5rem;
     background-color: #FCFCFC;
