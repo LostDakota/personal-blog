@@ -14,19 +14,31 @@ import { EditComponent } from './edit/edit.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      title: 'Mika House Web Development'
+    }
   },
   {
     path: 'blog',
-    component: BlogComponent
+    component: BlogComponent,
+    data: {
+      title: 'Mika House Web Development - Blog'
+    }
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    data: {
+      title: 'Mika House Web Development - About'
+    }
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    data: {
+      title: 'Mika House Web Development - Contact'
+    }
   },
   {
     path: 'blog/:id',

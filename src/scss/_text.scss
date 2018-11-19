@@ -49,10 +49,10 @@ p{
 }
 
 .ql-syntax{
-    border: 1px solid $lightestgray;
-    background: #FAFAFA;
+    background: darkslategray;
     padding: .5rem 1rem;
     border-radius: 3px;
+    color: white;
 }
 
 .btn-submit{
@@ -61,4 +61,38 @@ p{
 
 .clickable {
     cursor: pointer;
+}
+
+blockquote {
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    border-left: 3px solid #AAA;
+    padding: .5rem;
+    background-color: #FCFCFC;
+    position: relative;
+
+    &:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f10d';
+        margin-right: 1rem;
+        color: #AAA;
+    }
+
+    &:after {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f10e';
+        margin-left: 1rem;
+        color: #AAA;
+        position: absolute;
+        right: 1rem;
+    }
+}
+
+app-post {
+    a {
+        color: lighten(darkslategray, 10%);
+        text-decoration: underline;
+    }
 }
