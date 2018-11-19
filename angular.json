@@ -24,8 +24,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
-              "src/robots.txt",
-              "src/sitemap.xml"
+              "src/robots.txt"
             ],
             "styles": [
               "node_modules/quill/dist/quill.snow.css",
