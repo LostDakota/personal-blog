@@ -3,7 +3,6 @@ import { AuthenticationService } from './authentication.service';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { TitleService } from './title.service';
 import { filter } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
