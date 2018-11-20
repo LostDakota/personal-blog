@@ -23,21 +23,21 @@ const routes: Routes = [
     path: 'blog',
     component: BlogComponent,
     data: {
-      title: 'Mika House Web Development - Blog'
+      title: 'Blog - Mika House Web Development'
     }
   },
   {
     path: 'about',
     component: AboutComponent,
     data: {
-      title: 'Mika House Web Development - About'
+      title: 'About - Mika House Web Development'
     }
   },
   {
     path: 'contact',
     component: ContactComponent,
     data: {
-      title: 'Mika House Web Development - Contact'
+      title: 'Contact - Mika House Web Development'
     }
   },
   {
@@ -56,6 +56,10 @@ const routes: Routes = [
     path: 'create',
     component: CreateComponent,
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'tags/:tag',
+    component: BlogComponent
   },
   {
     path: '**',

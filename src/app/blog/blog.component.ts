@@ -9,18 +9,18 @@ import { Post } from '../models/post.model';
 })
 
 export class BlogComponent implements OnInit {
-
-  posts$: Post[] = [];  
+  
+  posts$: Post[] = [];
 
   constructor(
     private data: DataService
   ) { };
 
   ngOnInit() {
+    
     this.data.getPosts()
       .subscribe(
-        data => this.posts$ = data,
-        error => this.posts$ = []
+        data => this.posts$ = data
       );
   }
 }

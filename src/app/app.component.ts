@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-
-import { filter, map, mergeMap } from 'rxjs/operators';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { TitleService } from './title.service';
+import { filter } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +14,21 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 export class AppComponent implements OnInit {
 
   isAuthenticated: boolean;
+  title: string;
 
   constructor(
-    private authenticationService: AuthenticationService
-  ) {};
+    private authenticationService: AuthenticationService,
+    private titleService: TitleService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { 
+    router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.title = this.router.routerState.snapshot.root.firstChild.data['title'] || 'Mika House Web Development';
+      this.titleService.setTitle(this.title);
+    });
+   };
 
   ngOnInit(){
     this.isAuthenticated = this.authenticationService.isAuthenticated();

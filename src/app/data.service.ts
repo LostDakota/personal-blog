@@ -36,4 +36,8 @@ export class DataService {
   uploadImage(form): Observable<any>{
     return this.http.post<any>('https://api.mika.house/image', form);
   }
+
+  tagSearch(tag: String): Observable<Post[]> {
+    return this.http.get<Post[]>('https://api.mika.house/tags/' + tag);
+  }
 }
