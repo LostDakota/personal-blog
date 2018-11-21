@@ -1,15 +1,26 @@
-a{
+h2 {
+    a {
+        color: $darkgray;
+
+        &:hover {
+            color: $lightblue;
+            text-decoration: none;
+        }
+    }
+}
+
+a {
     text-decoration: none;
     color: $darkgray;
-    &:hover{
+    &:hover {
         color: $lightgray;
     }
-    &:active{
+    &:active {
         text-decoration:  none!important;
     }
 }
 
-p{
+p {
     margin-bottom: 1rem;
 
     &:last-of-type{
@@ -17,12 +28,12 @@ p{
     }
 }
 
-.color-link{
+.color-link {
     color: $lightblue;
 }
 
-.form-group{
-    .form-control{
+.form-group {
+    .form-control {
         padding: 5px;
         border: 1px solid $lightestgray;
         border-radius: 3px;
@@ -30,7 +41,7 @@ p{
         margin-bottom: 1rem;
     }
 
-    button{
+    button {
         float: right;
         background: $white;
         border: 1px solid $lightestgray;
@@ -38,24 +49,24 @@ p{
     }
 }
 
-.fa-trash, .fa-edit{
+.fa-trash, .fa-edit {
     float: right;
     color: $lightblue;
     margin-left: 1rem;
 }
 
-.ql-editor{
+.ql-editor {
     min-height: 300px;
 }
 
-.ql-syntax{
+.ql-syntax {
     background: darkslategray;
     padding: .5rem 1rem;
     border-radius: 3px;
     color: white;
 }
 
-.btn-submit{
+.btn-submit {
     margin-bottom: 2rem;
 }
 
