@@ -5,7 +5,7 @@
     </div>
     <div class="card" *ngFor="let post of posts$">
       <h2>
-        <a routerLink="'blog/{{post._id}}'">{{ post.title }}</a>
+        <a routerLink="/blog/{{post._id}}">{{ post.title }}</a>
       </h2>      
       <h6>{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
       <div [innerHTML]="post.content | summary"></div>
