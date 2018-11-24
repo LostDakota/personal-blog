@@ -48,11 +48,11 @@ const routes: Routes = [
     }
   },
   {
-    path: 'blog/:id',
+    path: 'post/:id',
     component: PostComponent
   },
   {
-    path: 'blog/edit/:id',
+    path: 'post/edit/:id',
     component: EditComponent
   },
   {
