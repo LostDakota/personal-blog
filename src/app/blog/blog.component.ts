@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BlogComponent implements OnInit {
   
   posts$: Post[] = [];  
-  tag: String;
+  filter: String;
 
   constructor(
     private data: DataService,
@@ -21,10 +21,10 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
 
-    this.tag = this.route.snapshot.paramMap.get('tag');
+    this.filter = this.route.snapshot.paramMap.get('tag');
     
-    if(this.tag){
-      this.data.tagSearch(this.tag)
+    if(this.filter){
+      this.data.tagSearch(this.filter)
         .subscribe(
           data => this.posts$ = data
         )

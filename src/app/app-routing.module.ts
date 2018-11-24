@@ -65,10 +65,6 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: 'tags/:tag',
-    component: BlogComponent
-  },
-  {
     path: '**',
     component: HomeComponent
   }
