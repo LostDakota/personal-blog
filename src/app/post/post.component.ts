@@ -10,6 +10,7 @@ import { TitleService } from '../title.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
+
 export class PostComponent implements OnInit {
 
   post$: Post;

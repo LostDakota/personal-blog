@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.scss']
 })
+
 export class EditComponent implements OnInit {
   updateForm: FormGroup;
   loading = false;
