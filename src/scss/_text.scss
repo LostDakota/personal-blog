@@ -29,9 +29,9 @@ p {
 }
 
 .color-link {
-    color: darkslateblue;
+    color: darken($lightblue, 50%);
      &:hover{
-         color: lightblue;
+         color: $lightblue;
      }
 }
 

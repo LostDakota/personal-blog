@@ -13,27 +13,31 @@ export class DataService {
     private http: HttpClient
   ) { };
 
-  getPosts(): Observable<Post[]>{
-    return this.http.get<Post[]>('https://api.mika.house/posts')
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>('https://api.mika.house/posts');
   }
 
-  getPost(postId): Observable<Post>{
-    return this.http.get<Post>('https://api.mika.house/post/' + postId)
+  getPost(postId): Observable<Post> {
+    return this.http.get<Post>('https://api.mika.house/post/' + postId);
   }
 
-  createPost(post: Post): Observable<Post>{
+  getLastPost(): Observable<Post> {
+    return this.http.get<Post>('https://api.mika.house/latest');
+  }
+
+  createPost(post: Post): Observable<Post> {
     return this.http.post<Post>('https://api.mika.house/post', post);
   }
 
-  updatePost(post: Post): Observable<Post>{
+  updatePost(post: Post): Observable<Post> {
     return this.http.put<Post>('https://api.mika.house/post/' + post._id, post);
   }
 
-  deletePost(postId): Observable<any>{
+  deletePost(postId): Observable<any> {
     return this.http.post<any>('https://api.mika.house/post/' + postId, {});
   }
 
-  uploadImage(form): Observable<any>{
+  uploadImage(form): Observable<any> {
     return this.http.post<any>('https://api.mika.house/image', form);
   }
 
