@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Post } from '../models/post.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -10,39 +11,28 @@ import { Post } from '../models/post.model';
 
 export class BlogComponent implements OnInit {
   
-  posts$: Post[] = [];
-  isTagSearch: boolean = false;
-  searchedTag: string = '';
+  posts$: Post[] = [];  
+  tag: String;
 
   constructor(
-    private data: DataService
+    private data: DataService,
+    private route: ActivatedRoute
   ) { };
 
   ngOnInit() {
+
+    this.tag = this.route.snapshot.paramMap.get('tag');
     
-    this.data.getPosts()
-      .subscribe(
-        data => this.posts$ = data
-      );
-  }
-
-  tagSearch(tag: string) {
-    this.data.tagSearch(tag)
-      .subscribe(
-        data => {
-          this.posts$ = data;
-          this.isTagSearch = true;
-          this.searchedTag = tag;
-        }
-      );
-  }
-
-  removeTagFilter() {
-    this.isTagSearch = false;
-    this.searchedTag = '';
-    this.data.getPosts()
-      .subscribe(
-        data => this.posts$ = data
-      )
+    if(this.tag){
+      this.data.tagSearch(this.tag)
+        .subscribe(
+          data => this.posts$ = data
+        )
+    } else {
+      this.data.getPosts()
+        .subscribe(
+          data => this.posts$ = data
+        )
+    }
   }
 }

@@ -27,6 +27,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'blog/:tag',
+    component: BlogComponent,
+    data: {
+      title: 'Blog - Mika House Web Development'
+    }
+  },
+  {
     path: 'about',
     component: AboutComponent,
     data: {
