@@ -10,7 +10,12 @@
     border-bottom: 1px solid lightblue;
     a{
         text-decoration: none!important;
-        color: lightblue;
+        color: darkslateblue;
+        font-weight: bold;
+
+        &:hover{
+            color: lightblue;
+        }
     }
     &.admin-link{
         a{

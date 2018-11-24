@@ -10,7 +10,7 @@ h2 {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none!important;
     color: $darkgray;
     &:hover {
         color: $lightgray;
@@ -29,7 +29,10 @@ p {
 }
 
 .color-link {
-    color: $lightblue;
+    color: darkslateblue;
+     &:hover{
+         color: lightblue;
+     }
 }
 
 .form-group {
