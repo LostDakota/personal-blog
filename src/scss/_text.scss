@@ -107,7 +107,11 @@ blockquote {
 
 app-post {
     a {
-        color: lighten(darkslategray, 10%);
+        color: lighten(darkslategray, 30%);
         text-decoration: underline;
+
+        &:hover {
+            color: lightblue;
+        }
     }
 }
