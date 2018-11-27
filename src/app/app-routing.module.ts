@@ -13,13 +13,6 @@ import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-    data: {
-      title: 'Mika House Web Development'
-    }
-  },
-  {
     path: 'blog',
     component: BlogComponent,
     data: {
@@ -57,7 +50,10 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: {
+      title: 'Login'
+    }
   },
   {
     path: 'create',
@@ -66,7 +62,10 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      title: 'Mika House Web Development'
+    }
   }
 ];
 

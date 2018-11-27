@@ -1,13 +1,4 @@
-h2 {
-    a {
-        color: $darkgray;
-
-        &:hover {
-            color: $lightblue;
-            text-decoration: none;
-        }
-    }
-}
+@import '../scss/colors';
 
 a {
     text-decoration: none!important;
@@ -25,6 +16,17 @@ p {
 
     &:last-of-type{
         margin-bottom: 0;
+    }
+}
+
+h2 {
+    a {
+        color: $darkgray;
+
+        &:hover {
+            color: $lightblue;
+            text-decoration: none;
+        }
     }
 }
 

@@ -1,13 +1,27 @@
 $white: #FFF;
-
 $black: #000;
+$lightestgray: lighten($black, 95%);
+$lightgray: lighten($black, 90%);
 $darkgray: #333;
-$lightgray: #666;
-$lightergray: #AAA;
-$lightestgray: #CCC;
-
 $lightblue: lightblue;
+$slate: #235E71;
 
-.c-dark-gray {
-    color: $darkgray;
+$colors: (
+    white: $white,
+    lightestgray: $lightestgray,
+    lightgray: $lightgray,
+    gray: lighten($black, 80%),
+    darkgray: $darkgray,
+    lightblue: $lightblue,
+    slate: $slate
+);
+
+@each $name, $color in $colors {
+    .c-#{$name} {
+        color: $color;
+    }
+
+    .c-#{$name}-bg {
+        background-color: $color;
+    }
 }
