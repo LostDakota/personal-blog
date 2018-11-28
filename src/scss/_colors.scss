@@ -4,7 +4,8 @@ $lightestgray: lighten($black, 95%);
 $lightgray: lighten($black, 90%);
 $darkgray: #333;
 $lightblue: lightblue;
-$slate: #235E71;
+$blue: #235E71;
+$slate: darkslategray;
 
 $colors: (
     white: $white,
@@ -13,6 +14,7 @@ $colors: (
     gray: lighten($black, 80%),
     darkgray: $darkgray,
     lightblue: $lightblue,
+    blue: $blue,
     slate: $slate
 );
 

@@ -70,10 +70,10 @@ h2 {
 }
 
 .ql-syntax {
-    background: darkslategray;
+    background: $slate;
     padding: .5rem 1rem;
     border-radius: 3px;
-    color: white;
+    color: $white;
 }
 
 .btn-submit {
@@ -85,12 +85,12 @@ h2 {
 }
 
 blockquote {
-    border: 1px solid #CCC;
+    border: 1px solid $lightgray;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    border-left: 3px solid #AAA;
+    border-left: 3px solid $lightgray;
     padding: .5rem;
-    background-color: #FCFCFC;
+    background-color: $lightestgray;
     position: relative;
 
     &:before {
@@ -106,7 +106,7 @@ blockquote {
         font-weight: 900;
         content: '\f10e';
         margin-left: 1rem;
-        color: #AAA;
+        color: $lightgray;
         position: absolute;
         right: 1rem;
     }
@@ -114,7 +114,7 @@ blockquote {
 
 app-post {
     a {
-        color: lighten(darkslategray, 30%);
+        color: lighten($slate, 30%);
         text-decoration: underline;
 
         &:hover {

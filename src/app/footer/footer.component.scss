@@ -1,13 +1,21 @@
+@import '../../scss/colors';
+@import '../../scss/animations';
+
 .footer{
     width: 100vw;
-    background-color: #235E71;
-    color: #EEE;
+    background-color: $blue;
+    color: $lightestgray;
     padding: .5rem 0 0;
     text-align: center;  
 
     i{
         margin: 0 1rem;
         font-size: 20px;
+        transition: $quick;
+
+        &:hover {
+            color: $lightblue;
+        }
     }
 
     span{
