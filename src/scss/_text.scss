@@ -1,11 +1,15 @@
 @import '../scss/colors';
+@import '../scss/animations';
 
 a {
     text-decoration: none!important;
     color: $darkgray;
+    transition: $quick;
+
     &:hover {
         color: $lightgray;
     }
+
     &:active {
         text-decoration:  none!important;
     }
@@ -22,6 +26,7 @@ p {
 h2 {
     a {
         color: $darkgray;
+        transition: $quick;
 
         &:hover {
             color: $lightblue;

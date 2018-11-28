@@ -1,17 +1,26 @@
+@import '../scss/colors';
+@import '../scss/animations';
+
 .tag{
     font-size: .75rem;
     border-radius: 1rem;
     display: inline;
     margin-right: .5rem;
-    background-color: lightblue;
-    color: darkslategray;
+    background-color: $lightblue;
+    color: $slate;
     padding: 3px 8px;
+    transition: $quick;
+
     &:before{
         content: '\f02b';
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         margin-right: 5px;
-        color: white;
+        color: $white;
+    }
+
+    &:hover {
+        color: $white;
     }
 }
 

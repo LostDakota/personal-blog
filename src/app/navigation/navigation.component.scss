@@ -1,25 +1,32 @@
+@import '../../scss/colors';
+@import '../../scss/animations';
+
 .site-header-title{
     text-align: center;
 }
 
 .menu-items{
     text-align: center;
-
-    a:hover {
-        color: lightblue;
-    }
-}
-
-.active{
-    border-bottom: 1px solid lightblue;
     
-    a{
-        text-decoration: none!important;
-        color: darken(lightblue, 50%);
-        font-weight: bold;
+    a {
+        transition: $quick;
 
-        &:hover{
-            color: lightblue;
+        &:hover {
+            color: $lightblue;
+        }
+    }
+    
+    &.active{
+        border-bottom: 1px solid $lightblue;
+    
+        a{
+            text-decoration: none!important;
+            color: darken($lightblue, 50%);
+            font-weight: bold;        
+    
+            &:hover{
+                color: $lightblue;
+            }
         }
     }
 }
