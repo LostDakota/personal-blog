@@ -54,7 +54,10 @@
     <style>@import "//fonts.googleapis.com/css?family=Raleway";</style>
     
     <script>
-      hljs.initHighlightingOnLoad();
+      setTimeout(function() {
+        hljs.initHighlightingOnLoad();
+      }, 500);
+      
       if ('serviceWorker' in navigator && 'PushManager' in window) {
         navigator.serviceWorker
             .register('/service-worker.js');
