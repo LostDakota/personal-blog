@@ -1,0 +1,21 @@
+{
+    "short_name": "Mika House",
+    "name": "MikaHouse Web Development",
+    "icons": [
+      {
+        "src": "/assets/android-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/assets/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#FAFAFA",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#235E71"
+  }
