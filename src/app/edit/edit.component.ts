@@ -20,6 +20,7 @@ export class EditComponent implements OnInit {
   tempTags: string;
 
   modules: any = {
+    syntax: true,
     toolbar:{
       container: [
         ["bold", "italic", "underline", "strike"],        
@@ -72,7 +73,7 @@ export class EditComponent implements OnInit {
 
     this.data.updatePost(this.post$)
       .subscribe(data => {
-        this.router.navigate(['/blog/' + data._id]);
+        this.router.navigate(['/post/' + data._id]);
       });
   }
 }

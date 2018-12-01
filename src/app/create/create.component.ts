@@ -17,6 +17,7 @@ export class CreateComponent implements OnInit {
   post: Post = new Post();
 
   modules: any = {
+    syntax: true,
     toolbar:{
       container: [
         ["bold", "italic", "underline", "strike"],        
@@ -25,7 +26,7 @@ export class CreateComponent implements OnInit {
         ["link", "image"]
       ]
     }
-  }  
+  }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -59,9 +60,6 @@ export class CreateComponent implements OnInit {
     this.dataService.createPost(this.post)
       .subscribe(data => {
         this.router.navigate(['/blog/' + data._id]);        
-      },
-      error => {
-        this.loading = false;
       }
     );
   }

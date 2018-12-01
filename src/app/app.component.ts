@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { TitleService } from './title.service';
 import { filter } from 'rxjs/operators';
 
@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   constructor(
     private authenticationService: AuthenticationService,
     private titleService: TitleService,
-    private route: ActivatedRoute,
     private router: Router
   ) { 
     router.events.pipe(

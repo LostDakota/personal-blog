@@ -29,7 +29,8 @@ export class PostComponent implements OnInit {
     this.data.getPost(this.route.snapshot.paramMap.get('id'))
       .subscribe(
         data => {
-          this.post$ = data;
+          this.post$ = data;          
+
           this.titleService.setTitle(data.title + ' - Mika House Web Development');
         }
       );
@@ -43,6 +44,6 @@ export class PostComponent implements OnInit {
   }
 
   edit(postId){
-    this.router.navigate(['/blog/edit/' + postId]);
+    this.router.navigate(['/post/edit/' + postId]);
   }
 }

@@ -70,10 +70,26 @@ h2 {
 }
 
 .ql-syntax {
-    background: $slate;
+    background: darken($blue, 10%);
     padding: .5rem 1rem;
     border-radius: 3px;
     color: $white;
+
+    .hljs-meta {
+        color: $lightgray;
+    }
+
+    .hljs-string {
+        color: red;
+    }
+
+    .hljs-number {
+        color: #88ff00;
+    }
+
+    .hljs-built_in {
+        color: #c1ff80;
+    }
 }
 
 .btn-submit {
