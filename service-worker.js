@@ -24,12 +24,12 @@ self.addEventListener('fetch', function(event) {
 
 self.addEventListener('activate', function(event) {
     event.waitUntil(
-      caches.keys().then(keys => Promise.all(
-        keys.map(key => {
-          if (key != cacheName) {
-            return caches.delete(key);
-          }
-        })
-      ))
+        caches.keys().then(keys => Promise.all(
+            keys.map(key => {
+                if (key != cacheName) {
+                    return caches.delete(key);
+                }
+            })
+        ))
     );
-  });
+});
