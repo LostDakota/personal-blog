@@ -19,7 +19,7 @@ export class NavigationComponent {
     private authenticationService: AuthenticationService
   ) { 
     this.isAuthenticated = this.authenticationService.isAuthenticated();
-    router.events.pipe(
+    this.router.events.pipe(
       filter<NavigationEnd>((event) => event instanceof NavigationEnd)
     ).subscribe(
       res => this.currentUrl = res["url"]
