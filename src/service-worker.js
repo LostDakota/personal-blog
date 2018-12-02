@@ -1,4 +1,4 @@
-var cacheName = 'mikahouse::00005';
+var cacheName = 'mikahouse::00006';
 var filesToCache = [
     'manifest.json',
     '/assets/android-icon-192x192.png',
