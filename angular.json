@@ -26,7 +26,8 @@
               "src/assets",
               "src/robots.txt",
               "src/service-worker.js",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/extras.js"
             ],
             "styles": [
               "node_modules/quill/dist/quill.snow.css",
