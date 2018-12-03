@@ -1,4 +1,7 @@
-var cacheName = 'mikahouse::00012';
+var today = new Date();
+today.setHours(0, 0, 0, 0);
+var ts = today.getTime();
+var cacheName = "mikahouse::" + ts;
 var filesToCache = [
     'manifest.json',
     '/assets/android-icon-192x192.png',
