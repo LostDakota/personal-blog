@@ -23,7 +23,7 @@ self.addEventListener('fetch', function (event) {
             const response = await cache.match(event.request);
             var fetchPromise = fetch(event.request).then(function (networkResponse) {
                 cache.put(event.request, networkResponse.clone())
-                    .catch(function (err) { });
+                    .catch(function (err) {});
                 return networkResponse;
             });
             return response || fetchPromise;
