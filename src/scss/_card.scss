@@ -6,6 +6,8 @@
     margin-bottom: 1rem;
     transition: .5s ease-in-out;
     word-break: break-word;
+    position: relative;
+    overflow: hidden;
     
     &:hover{
         box-shadow: 0 5px 8px rgba(0, 0, 0, .1);
@@ -13,5 +15,20 @@
 
     img{
         max-width: 100%;
+    }
+}
+
+.home-cards {
+
+    .pseudo-card {
+        padding-bottom: 1rem;
+        margin-bottom: .5rem;
+        border-bottom: 1px solid $lightgray;
+
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
     }
 }

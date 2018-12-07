@@ -10,17 +10,17 @@ import { DataService } from '../data.service';
 
 export class HomeComponent implements OnInit {
 
-  post$: Post;
+  posts$: Post[];
 
   constructor(
     private data: DataService
   ) { };  
 
   ngOnInit() {
-    this.data.getLastPost()
+    this.data.getLatestPosts()
       .subscribe(
         data => {
-          this.post$ = data;
+          this.posts$ = data;
         }
       )
   }

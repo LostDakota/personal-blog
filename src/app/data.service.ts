@@ -21,8 +21,8 @@ export class DataService {
     return this.http.get<Post>('https://api.mika.house/post/' + postId);
   }
 
-  getLastPost(): Observable<Post> {
-    return this.http.get<Post>('https://api.mika.house/latest');
+  getLatestPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>('https://api.mika.house/latest');
   }
 
   createPost(post: Post): Observable<Post> {
