@@ -20,15 +20,9 @@
 
 .home-cards {
 
-    .pseudo-card {
+    .pseudo-card:not(:last-child) {
         padding-bottom: 1rem;
         margin-bottom: .5rem;
         border-bottom: 1px solid $lightgray;
-
-        &:last-child {
-            padding-bottom: 0;
-            border-bottom: none;
-            margin-bottom: 0;
-        }
     }
 }
