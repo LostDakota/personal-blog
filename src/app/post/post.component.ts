@@ -4,7 +4,6 @@ import { Post } from '../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { TitleService } from '../title.service';
-import { CardAnimation } from '../cardanimation';
 
 @Component({
   selector: 'app-post',

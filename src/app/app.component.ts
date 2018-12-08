@@ -12,7 +12,6 @@ import { filter } from 'rxjs/operators';
 
 export class AppComponent implements OnInit {
 
-  isVisible = false;
   isAuthenticated: boolean;
   title: string;
 
