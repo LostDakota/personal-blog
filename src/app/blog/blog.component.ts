@@ -21,7 +21,6 @@ export class BlogComponent implements OnInit {
   ) { };
 
   ngOnInit() {
-    console.log(this.isVisible);
 
     this.filter = this.route.snapshot.paramMap.get('tag');
     
@@ -39,7 +38,6 @@ export class BlogComponent implements OnInit {
           data => {
             this.posts$ = data;
             this.isVisible = !this.isVisible;
-            console.log(this.isVisible);
           }
         )
     }
