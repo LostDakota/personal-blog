@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-    <div class="card" *ngFor="let post of posts$">
+    <div class="card ng-cloak" *ngFor="let post of posts$" [ngClass]="{'ng-show': isVisible}">
       <h2>
         <a title="{{ post.title }}" routerLink="/post/{{post._id}}">{{ post.title }}</a>
       </h2>      

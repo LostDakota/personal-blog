@@ -4,6 +4,7 @@ import { Post } from '../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { TitleService } from '../title.service';
+import { CardAnimation } from '../cardanimation';
 
 @Component({
   selector: 'app-post',
@@ -14,7 +15,8 @@ import { TitleService } from '../title.service';
 export class PostComponent implements OnInit {
 
   post$: Post;
-  isAuthenticated: boolean;
+  isAuthenticated: boolean;  
+  isVisible = false;
 
   constructor(
     private data: DataService, 
@@ -29,8 +31,8 @@ export class PostComponent implements OnInit {
     this.data.getPost(this.route.snapshot.paramMap.get('id'))
       .subscribe(
         data => {
-          this.post$ = data;          
-
+          this.isVisible = !this.isVisible;
+          this.post$ = data;
           this.titleService.setTitle(data.title + ' - Mika House Web Development');
         }
       );

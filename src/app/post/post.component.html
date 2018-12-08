@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <div class="card">
+    <div class="card ng-cloak" [ngClass]="{'ng-show': isVisible}">
       <span *ngIf="isAuthenticated"><i (click)="deletePost(post$?._id)" class="fa fa-trash clickable"></i></span>
       <span *ngIf="isAuthenticated"><i (click)="edit(post$?._id)" class="fa fa-edit clickable"></i></span>
       <h2>{{ post$?.title }}</h2>      

@@ -5,12 +5,13 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss']  
 })
 
 export class HomeComponent implements OnInit {
 
   posts$: Post[];
+  isVisible = false;
 
   constructor(
     private data: DataService
@@ -19,8 +20,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.data.getLatestPosts()
       .subscribe(
-        data => {
+        data => {          
           this.posts$ = data;
+          this.isVisible = !this.isVisible;
         }
       )
   }

@@ -1,4 +1,4 @@
-var cacheName = "v2::mikahouse";
+var cacheName = "v7::mikahouse";
 var filesToCache = [
     'manifest.json',
     '/assets/android-icon-192x192.png',
@@ -19,8 +19,10 @@ self.addEventListener('fetch', function (event) {
         caches.open(cacheName).then(async function (cache) {
             const response = await cache.match(event.request);
             var fetchPromise = fetch(event.request).then(function (networkResponse) {
-                cache.put(event.request, networkResponse.clone())
-                    .catch(function (err) {});
+                if(shouldCache(event.request.url)) {
+                    cache.put(event.request, networkResponse.clone())
+                        .catch(function (err) {});
+                }                
                 return networkResponse;
             });
             return response || fetchPromise;
@@ -40,3 +42,8 @@ self.addEventListener('activate', function (event) {
         ))
     );
 });
+
+let shouldCache = (url) => {
+    let truth = url.indexOf('?') == -1;
+    return truth;
+}

@@ -1,1 +1,12 @@
 $quick: .25s all ease-in-out;
+
+.ng-cloak {
+    opacity: 0;
+    transition: 1s;
+    margin-top: 20px;
+}
+
+.ng-show {
+    opacity: 1;
+    margin-top: 0;
+}

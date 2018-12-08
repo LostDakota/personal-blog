@@ -6,14 +6,17 @@
             </h2>
             <p>This website is dedicated to web and application development, technology and other geeky stuff that all your cool friends (or spouse, in my case) will roll their eyes about.</p>
         </div>
-        <div class="card home-cards">
+        <div class="card home-cards ng-cloak" [ngClass]="{'ng-show': isVisible}">
             <div class="label">Latest Posts</div>
             <div class="pseudo-card" *ngFor="let post of posts$">
                 <h2>
                     <a title="{{post.title}}" routerLink="/post/{{post._id}}">{{ post.title }}</a>
                 </h2>
                 <h6>{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
-                <div [innerHTML]="post.content | summary: post._id: post.title"></div>
+                <div>
+                    <span [innerHTML]="post.content | summary: post._id"></span>
+                    <a routerLink="/post/{{post._id}}" title="Go to the post {{post.title}" class="color-link">... read more</a>
+                </div>
                 <div class="tags" *ngIf="post.tags.length > 0">
                     <a routerLink="/blog/{{tag}}" title="{{tag}}" class="tag" *ngFor="let tag of post.tags">{{tag}}</a>
                 </div>

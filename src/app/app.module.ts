@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { PostComponent } from './post/post.component';
 import { LoginComponent } from './login/login.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
+
 
 import { Summary } from './summary.pipe';
 import { TitleService } from './title.service';
@@ -38,10 +40,11 @@ export function tokenGetter(){
     LoginComponent,
     CreateComponent,
     EditComponent,
-    Summary
+    Summary    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     QuillModule,
