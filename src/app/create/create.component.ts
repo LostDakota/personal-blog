@@ -65,13 +65,16 @@ export class CreateComponent implements OnInit {
   }
 
   registerImageHandler(event: any){
-    event.getModule('toolbar').addHandler('image', this.imageHandler(event));    
+    event.getModule('toolbar')
+      .addHandler('image', this.imageHandler(event));
+      
     setTimeout(() => {
-      document.querySelector('button.ql-image').addEventListener('click', (e) => {        
-        e.preventDefault();
-        document.getElementById('image-upload').click();
-      });
-    }, 500);    
+      document.querySelector('button.ql-image')
+        .addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('image-upload').click();
+        });
+    }, 500);
   }
 
   imageHandler(editor: any) {

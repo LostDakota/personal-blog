@@ -23,7 +23,13 @@ export class AppComponent implements OnInit {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.title = this.router.routerState.snapshot.root.firstChild.data['title'] || 'Mika House Web Development';
+      this.title = this.router
+                       .routerState
+                       .snapshot
+                       .root
+                       .firstChild
+                       .data['title'] || 'Mika House Web Development';
+                       
       this.titleService.setTitle(this.title);
     });
    };
