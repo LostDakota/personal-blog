@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { Post } from '../models/post.model';
 import { ActivatedRoute } from '@angular/router';
 import { TitleService } from '../title.service';
+import { DescriptionService } from '../description.service';
 
 @Component({
   selector: 'app-blog',
@@ -32,7 +33,7 @@ export class BlogComponent implements OnInit {
           data => {
             this.posts$ = data;
             this.isVisible = !this.isVisible;
-            this.titleService.setTitle(`Posts tagged with ${this.filter} - Mika House Web Development`)
+            this.titleService.setTitle(`Posts tagged with ${this.filter} - Mika House Web Development`);
           }
         )
     } else {

@@ -38,7 +38,8 @@ export class CreateComponent implements OnInit {
     this.newPostForm = this.formBuilder.group({
       title: ['', Validators.required],
       content: ['', Validators.required],
-      tags: ['', Validators.required]
+      tags: ['', Validators.required],
+      description: ['', Validators.required]
     });
   }
 
@@ -56,6 +57,7 @@ export class CreateComponent implements OnInit {
     this.post.title = this.f.title.value;
     this.post.content = this.f.content.value;
     this.post.tags = this.f.tags.value.split(',');
+    this.post.description = this.f.description.value;
 
     this.dataService.createPost(this.post)
       .subscribe(data => {

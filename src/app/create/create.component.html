@@ -16,6 +16,9 @@
           </div>
       </div>
       <div class="form-group">
+        <input placeholder="Description (160 or less)" type="text" formControlName="description" maxlength="160" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" />
+      </div>
+      <div class="form-group">
         <input placeholder="Tags (comma seperated)" type="text" formControlName="tags" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" />
       </div>
       <div class="form-group">

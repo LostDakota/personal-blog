@@ -45,7 +45,8 @@ export class EditComponent implements OnInit {
     this.updateForm = this.formBuilder.group({
       title: ['', Validators.required],
       content: ['', Validators.required],
-      tags: ['', Validators.required]
+      tags: ['', Validators.required],
+      description: ['', Validators.required]
     });
     this.data.getPost(this.route.snapshot.paramMap.get('id'))
       .subscribe(
@@ -70,6 +71,7 @@ export class EditComponent implements OnInit {
     this.post$.title = this.f.title.value;
     this.post$.content = this.f.content.value;
     this.post$.tags = this.f.tags.value.split(',');
+    this.post$.description = this.f.description.value;
 
     this.data.updatePost(this.post$)
       .subscribe(data => {

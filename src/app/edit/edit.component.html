@@ -3,12 +3,19 @@
   <div class="col">
     <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
+        <label controlName="title">Title</label>
         <input type="text" [(ngModel)]="post$.title" formControlName="title" class="form-control">
       </div>
       <div class="form-group">
+        <label controlName="content">Body</label>
         <quill-editor [modules]="modules" [(ngModel)]="post$.content" formControlName="content"></quill-editor>
       </div>
       <div class="form-group">
+          <label controlName="description">Description</label>
+        <input type="text" [(ngModel)]="post$.description" formControlName="description" maxlength="160" class="form-control">
+      </div>
+      <div class="form-group">
+          <label controlName="tags">Tags</label>
         <input type="text" [(ngModel)]="tempTags" formControlName="tags" class="form-control">
       </div>
       <div class="form-group">
