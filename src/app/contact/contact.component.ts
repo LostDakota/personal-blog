@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { DescriptionService } from '../description.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,5 +8,11 @@ import { Component} from '@angular/core';
 })
 
 export class ContactComponent{
-  constructor() { };
+  constructor(
+    private descriptionService: DescriptionService
+  ) { };
+
+  ngOnInit() {
+    this.descriptionService.updateDescription('I can be contacted at drew@mika.house.com or any of the other social media links at the bottom of this page.')
+  }
 }
