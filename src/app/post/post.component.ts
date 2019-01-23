@@ -15,13 +15,13 @@ import { DescriptionService } from '../description.service';
 export class PostComponent implements OnInit {
 
   post$: Post;
-  isAuthenticated: boolean;  
+  isAuthenticated: boolean;
   isVisible = false;
 
   constructor(
-    private data: DataService, 
-    private route: ActivatedRoute, 
-    private router: Router, 
+    private data: DataService,
+    private route: ActivatedRoute,
+    private router: Router,
     private authenticationService: AuthenticationService,
     private titleService: TitleService,
     private descriptionService: DescriptionService
@@ -38,6 +38,15 @@ export class PostComponent implements OnInit {
           this.descriptionService.updateDescription(data.description);
         }
       );
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+
+      s.src = '//mika-house.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', new Date().toString());
+      (d.head || d.body).appendChild(s);
+    })();
   }
 
   deletePost(postId) {
@@ -47,7 +56,7 @@ export class PostComponent implements OnInit {
       );
   }
 
-  edit(postId){
+  edit(postId) {
     this.router.navigate(['/post/edit/' + postId]);
   }
 }

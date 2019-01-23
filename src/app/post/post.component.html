@@ -3,12 +3,14 @@
     <div class="card ng-cloak" [ngClass]="{'ng-show': isVisible}">
       <span *ngIf="isAuthenticated"><i (click)="deletePost(post$?._id)" class="fa fa-trash clickable"></i></span>
       <span *ngIf="isAuthenticated"><i (click)="edit(post$?._id)" class="fa fa-edit clickable"></i></span>
-      <h2>{{ post$?.title }}</h2>      
+      <h2>{{ post$?.title }}</h2>
       <h6>{{ post$?.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
       <div [innerHTML]="post$?.content"></div>
       <div class="tags" *ngIf="post$?.tags">
         <a routerLink="/blog/{{tag}}" class="tag" *ngFor="let tag of post$?.tags">{{tag}}</a>
-      </div>      
+      </div>
+      <div id="disqus_thread"></div>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-  </div>  
+  </div>
 </div>
