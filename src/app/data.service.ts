@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 
 export class DataService {
+  postCount = 3;
 
   constructor(
     private http: HttpClient
@@ -22,7 +23,7 @@ export class DataService {
   }
 
   getLatestPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>('https://api.mika.house/latest');
+    return this.http.get<Post[]>('https://api.mika.house/latest/' + this.postCount);
   }
 
   createPost(post: Post): Observable<Post> {
