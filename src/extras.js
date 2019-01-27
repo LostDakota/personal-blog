@@ -11,9 +11,7 @@ setTimeout(function() {
 
   gtag('config', 'UA-124651312-1');
   
-  // if ('serviceWorker' in navigator && 'PushManager' in window) {
-  //   navigator.serviceWorker
-  //       .register('/service-worker.js');
-  // }
-
-  navigator.serviceWorker.unregister('/service-worker.js');
+  if ('serviceWorker' in navigator && 'PushManager' in window) {
+    navigator.serviceWorker
+        .register('/service-worker.js');
+  }
