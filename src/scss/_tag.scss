@@ -1,6 +1,15 @@
 @import '../scss/colors';
 @import '../scss/animations';
 
+@keyframes wiggle {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg) scale(.9);
+    }
+}
+
 .tag{
     font-size: .75rem;
     border-radius: 1rem;
@@ -11,17 +20,24 @@
     padding: 3px 8px;
     transition: $quick;
 
-    &:before{
+    &:before {
         content: '\f02b';
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         margin-right: 10px;
         color: $white;
         margin-right: 5px;
+        display: inline-block;
+        animation-iteration-count: 3;    
+        animation-duration: .2s;
     }
 
     &:hover {
         color: $white;
+
+        &:before {
+            animation-name: wiggle;
+        }   
     }
 }
 

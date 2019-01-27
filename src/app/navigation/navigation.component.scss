@@ -10,9 +10,12 @@
     
     a {
         transition: $quick;
+        transform: scale(1);
+        display: inline-block;
 
         &:hover {
             color: $lightblue;
+            transform: scale(1.1);
         }
     }
     
