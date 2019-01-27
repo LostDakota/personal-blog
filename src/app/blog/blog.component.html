@@ -1,4 +1,7 @@
 <div class="row ng-cloak" [ngClass]="{'ng-show': isVisible}">
+  <div class="col-12">
+    <h1 class="c-slate t-center">Blog Posts</h1>
+  </div>
   <div class="col" *ngIf="posts$.length > 0">
     <div class="div" *ngIf="filter">
       <div class="col">

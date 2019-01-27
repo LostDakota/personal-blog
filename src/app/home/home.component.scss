@@ -1,7 +1,14 @@
+@import '../../scss/colors';
+
 .container {
     display: grid;    
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: .5rem 1rem;
+
+    @media (max-width: 600px) {
+        grid-gap: .5rem 0;
+        padding: 0!important;
+    }
 
     .card:nth-child(1) {
         grid-column: 1 / -1
@@ -12,5 +19,6 @@
         display: block;
         text-align: center;
         margin: -1rem 0;
+        color: $slate;
     }
 }
