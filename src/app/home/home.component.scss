@@ -1,7 +1,7 @@
 .container {
     display: grid;    
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 1rem 2rem;
+    grid-gap: .5rem 1rem;
 
     .card:nth-child(1) {
         grid-column: 1 / -1
