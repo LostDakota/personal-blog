@@ -4,13 +4,17 @@
     border-radius: 3px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .05);
     margin-bottom: 1rem;
-    transition: .5s ease-in-out;
+    transition: all .25s ease-in-out;
     word-break: break-word;
     position: relative;
     overflow: hidden;
     
     &:hover{
         box-shadow: 0 5px 8px rgba(0, 0, 0, .1);
+        
+        &:not(:only-child) {
+            transform: scale(1.005);
+        }
     }
 
     img{

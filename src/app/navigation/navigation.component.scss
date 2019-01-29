@@ -7,29 +7,34 @@
 
 .menu-items{
     text-align: center;
+    transition: all .5s ease-in-out;
+    border-bottom: 1px solid $white;
     
     a {
         transition: $quick;
         transform: scale(1);
         display: inline-block;
+    }
 
-        &:hover {
-            color: $lightblue;
+    &:hover {
+        border-bottom: 1px solid $blue;
+        background: $lightblue;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        a {
             transform: scale(1.1);
+            color: $white;
         }
     }
     
     &.active{
-        border-bottom: 1px solid $lightblue;
+        border-bottom: 2px solid $lightblue;
     
         a{
             text-decoration: none!important;
             color: darken($lightblue, 50%);
-            font-weight: bold;        
-    
-            &:hover{
-                color: $lightblue;
-            }
+            font-weight: bold;
         }
     }
 }

@@ -12,9 +12,14 @@
         margin: 0 1rem;
         font-size: 20px;
         transition: $quick;
+        display: inline-block;
+        transition: $quick;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
 
         &:hover {
             color: $lightblue;
+            animation-name: shake;            
         }
     }
 
@@ -26,4 +31,13 @@
 .footer-wrapper {
     flex: 1 0 auto;
     overflow: hidden;
+}
+
+@keyframes shake {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
