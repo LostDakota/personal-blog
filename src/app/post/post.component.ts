@@ -40,12 +40,15 @@ export class PostComponent implements OnInit {
       );
 
     (function () { // DON'T EDIT BELOW THIS LINE
+        
       var d = document, s = d.createElement('script');
 
       s.src = '//mika-house.disqus.com/embed.js';
 
       s.setAttribute('data-timestamp', new Date().toString());
-      (d.head || d.body).appendChild(s);
+      if(document.querySelector('#disqus_thread')){
+        (d.head || d.body).appendChild(s);
+      }      
     })();
   }
 
