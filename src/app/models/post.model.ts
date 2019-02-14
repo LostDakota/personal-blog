@@ -4,6 +4,7 @@ export class Post {
     content: string;
     updatedAt: string;
     createdAt: string;    
+    slug: string;
     tags: string[];
     description: string;
 }
