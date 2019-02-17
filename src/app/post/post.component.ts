@@ -36,11 +36,13 @@ export class PostComponent implements OnInit {
           this.post$ = data;
           this.titleService.setTitle(data.title + ' - Mika House Web Development');
           this.descriptionService.updateDescription(data.description);
+          this.loadDisqus();
         }
       );
+  }
 
-    (function () { // DON'T EDIT BELOW THIS LINE
-        
+  loadDisqus() {
+    setTimeout(() => {
       var d = document, s = d.createElement('script');
 
       s.src = '//mika-house.disqus.com/embed.js';
@@ -48,8 +50,8 @@ export class PostComponent implements OnInit {
       s.setAttribute('data-timestamp', new Date().toString());
       if(document.querySelector('#disqus_thread')){
         (d.head || d.body).appendChild(s);
-      }      
-    })();
+      }
+    }, 1000);    
   }
 
   deletePost(postId) {
