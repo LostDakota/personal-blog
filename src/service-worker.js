@@ -1,4 +1,4 @@
-var cacheName = "v9::mikahouse";
+var cacheName = "v$versionNumber::mikahouse";
 var filesToCache = [
     'manifest.json',
     '/assets/android-icon-192x192.png',
