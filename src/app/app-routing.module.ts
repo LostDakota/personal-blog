@@ -41,11 +41,11 @@ const routes: Routes = [
     }
   },
   {
-    path: 'post/:id',
+    path: 'post/:slug',
     component: PostComponent
   },
   {
-    path: 'post/edit/:id',
+    path: 'post/edit/:slug',
     component: EditComponent
   },
   {

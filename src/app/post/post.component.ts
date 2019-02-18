@@ -29,7 +29,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.isAuthenticated = this.authenticationService.isAuthenticated();
-    this.data.getPost(this.route.snapshot.paramMap.get('id'))
+    this.data.getPost(this.route.snapshot.paramMap.get('slug'))
       .subscribe(
         data => {
           this.isVisible = !this.isVisible;

@@ -48,7 +48,7 @@ export class EditComponent implements OnInit {
       tags: ['', Validators.required],
       description: ['', Validators.required]
     });
-    this.data.getPost(this.route.snapshot.paramMap.get('id'))
+    this.data.getPost(this.route.snapshot.paramMap.get('slug'))
       .subscribe(
         data => {
           this.post$ = data;
@@ -75,7 +75,7 @@ export class EditComponent implements OnInit {
 
     this.data.updatePost(this.post$)
       .subscribe(data => {
-        this.router.navigate(['/post/' + data._id]);
+        this.router.navigate(['/post/' + data.slug]);
       });
   }
 }
