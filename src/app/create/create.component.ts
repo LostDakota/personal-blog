@@ -61,7 +61,7 @@ export class CreateComponent implements OnInit {
 
     this.dataService.createPost(this.post)
       .subscribe(data => {
-        this.router.navigate(['/blog/' + data._id]);        
+        this.router.navigate(['/blog/' + data.slug]);        
       }
     );
   }
