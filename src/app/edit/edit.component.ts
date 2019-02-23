@@ -75,7 +75,7 @@ export class EditComponent implements OnInit {
 
     this.data.updatePost(this.post$)
       .subscribe(data => {
-        this.router.navigate(['/post/' + data.slug]);
+        this.router.navigate([`/post/${data.slug}`]);
       });
   }
 }

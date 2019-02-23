@@ -61,7 +61,7 @@ export class CreateComponent implements OnInit {
 
     this.dataService.createPost(this.post)
       .subscribe(data => {
-        this.router.navigate(['/post/' + data.slug]);        
+        this.router.navigate([`/post/${data.slug}`]);        
       }
     );
   }
@@ -102,7 +102,7 @@ export class CreateComponent implements OnInit {
                 service.uploadImage(formData)
                   .subscribe(data => {
                     if(fileInput.files[0].type.indexOf('image') === 0){
-                      editor.insertEmbed(initial, 'image', 'https://api.mika.house/uploads/' + data);
+                      editor.insertEmbed(initial, 'image', `https://api.mika.house/uploads/${data}`);
                     }
                     
                     editor.setSelection(editor.getLength());

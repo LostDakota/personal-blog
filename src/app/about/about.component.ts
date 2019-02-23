@@ -19,6 +19,6 @@ export class AboutComponent {
       this.isVisible = !this.isVisible;
     }, 100);
     
-    this.descriptionService.updateDescription('I am a full stack developer who is passionate about Javascript and front end. I work fulltime in Sitecore and C# at Hyland Software in Westlake, Ohio.')
+    this.descriptionService.updateDescription('My name is Drew Mika and I am a full stack developer who is passionate about Javascript and front end. I work fulltime in Sitecore and C# at Hyland Software in Westlake, Ohio.')
   }
 }

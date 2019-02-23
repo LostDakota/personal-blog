@@ -36,6 +36,7 @@ export class BlogComponent implements OnInit {
             this.posts$ = data;
             this.isVisible = !this.isVisible;
             this.titleService.setTitle(`Posts tagged with ${this.filter} - Mika House Web Development`);
+            this.descriptionService.updateDescription(`These are all of the posts tagged with ${this.filter}.`)
           }
         )
     } else {

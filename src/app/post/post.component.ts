@@ -34,7 +34,7 @@ export class PostComponent implements OnInit {
         data => {
           this.isVisible = !this.isVisible;
           this.post$ = data;
-          this.titleService.setTitle(data.title + ' - Mika House Web Development');
+          this.titleService.setTitle(`${data.title} - Mika House Web Development`);
           this.descriptionService.updateDescription(data.description);
           this.loadDisqus();
         }
