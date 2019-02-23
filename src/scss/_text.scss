@@ -76,26 +76,10 @@ h2 {
 }
 
 .ql-syntax {
-    background: darken($blue, 10%);
+    background: darken($blue, 5%);
     padding: .5rem 1rem;
     border-radius: 3px;
     color: $white;
-
-    .hljs-meta {
-        color: $lightgray;
-    }
-
-    .hljs-string {
-        color: red;
-    }
-
-    .hljs-number {
-        color: #88ff00;
-    }
-
-    .hljs-built_in {
-        color: #c1ff80;
-    }
 }
 
 .btn-submit {
@@ -115,12 +99,15 @@ blockquote {
     background-color: $lightestgray;
     position: relative;
 
+    &:before, &:after {
+        color: $gray;
+    }
+
     &:before {
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         content: '\f10d';
         margin-right: 1rem;
-        color: #AAA;
     }
 
     &:after {
@@ -128,7 +115,6 @@ blockquote {
         font-weight: 900;
         content: '\f10e';
         margin-left: 1rem;
-        color: $lightgray;
         position: absolute;
         right: 1rem;
     }

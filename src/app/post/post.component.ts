@@ -41,6 +41,12 @@ export class PostComponent implements OnInit {
       );
   }
 
+  ngAfterViewInit() {
+    var scr = document.createElement('script');
+    scr.src = '/hl.js';
+    document.body.appendChild(scr);
+  }
+
   loadDisqus() {
     setTimeout(() => {
       var d = document, s = d.createElement('script');
@@ -54,14 +60,14 @@ export class PostComponent implements OnInit {
     }, 1000);    
   }
 
-  deletePost(postId) {
+  deletePost(postId: String) {
     this.data.deletePost(postId)
       .subscribe(
         data => this.router.navigate(['/'])
       );
   }
 
-  edit(postId) {
+  edit(postId: string) {
     this.router.navigate(['/post/edit/' + postId]);
   }
 }
