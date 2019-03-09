@@ -8,8 +8,7 @@ import { DescriptionService } from '../description.service';
 
 @Component({
   selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  templateUrl: './post.component.html'
 })
 
 export class PostComponent implements OnInit {
@@ -67,7 +66,7 @@ export class PostComponent implements OnInit {
       );
   }
 
-  edit(postId: string) {
-    this.router.navigate(['/post/edit/' + postId]);
+  edit(slug: string) {
+    this.router.navigate([`/post/edit/${slug}`]);
   }
 }

@@ -6,8 +6,7 @@ import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  templateUrl: './create.component.html'
 })
 
 export class CreateComponent implements OnInit {

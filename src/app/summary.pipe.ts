@@ -5,9 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class Summary implements PipeTransform {
-    transform(html: string, id: string, title: string): string {
-        let maxLength = 256;
-        let sub = html.replace(/<(?:.|\n)*?>/gm, '').substring(0, maxLength);
+    transform(html: string): string {
+        let sub = html.replace(/<(?:.|\n)*?>/gm, '').substring(0, 256);
         return `${sub.substr(0, Math.min(sub.length, sub.lastIndexOf(" ")))}`;
     }
 }

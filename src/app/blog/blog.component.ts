@@ -7,8 +7,7 @@ import { DescriptionService } from '../description.service';
 
 @Component({
   selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  templateUrl: './blog.component.html'
 })
 
 export class BlogComponent implements OnInit {
@@ -26,8 +25,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
 
-    this.filter = this.route.snapshot.paramMap.get('tag');
-    this.descriptionService.updateDescription('Here you will find blog posts on Angular, Javascript, Node.js and a bunch of other random things I like.')
+    this.filter = this.route.snapshot.paramMap.get('tag');    
     
     if(this.filter){
       this.data.tagSearch(this.filter)
@@ -45,6 +43,7 @@ export class BlogComponent implements OnInit {
           data => {
             this.posts$ = data;
             this.isVisible = !this.isVisible;
+            this.descriptionService.updateDescription('Here you will find blog posts on Angular, Javascript, Node.js and a bunch of other random things I like.');
           }
         )
     }

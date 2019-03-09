@@ -1,0 +1,78 @@
+.site-header-title{
+    text-align: center;
+}
+
+.menu-items{
+    text-align: center;
+    transition: all .5s ease-in-out;
+    border-bottom: 1px solid $white;
+    
+    a {
+        transition: $quick;
+        transform: scale(1);
+        display: inline-block;
+    }
+
+    &:hover {
+        border-bottom: 1px solid $blue;
+        background: $lightblue;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        a {
+            transform: scale(1.1);
+            color: $white;
+        }
+    }
+    
+    &.active{
+        border-bottom: 2px solid $lightblue;
+    
+        a{
+            text-decoration: none!important;
+            color: darken($lightblue, 50%);
+            font-weight: bold;
+        }
+    }
+}
+
+.footer{
+    width: 100vw;
+    background-color: $blue;
+    color: $lightestgray;
+    padding: .5rem 0 0;
+    text-align: center;  
+
+    i{
+        margin: 0 1rem;
+        font-size: 20px;
+        transition: $quick;
+        display: inline-block;
+        transition: $quick;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+
+        &:hover {
+            color: $lightblue;
+            animation-name: shake;            
+        }
+    }
+
+    span{
+        font-size: .7rem;
+    }
+} 
+
+.footer-wrapper {
+    flex: 1 0 auto;
+    overflow: hidden;
+}
+
+@keyframes shake {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

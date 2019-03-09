@@ -12,7 +12,9 @@ export class DescriptionService {
     ) { };
 
     updateDescription(rawHtml: string) {
-        let description = rawHtml.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 160).trim();
-        this.meta.updateTag({name: 'description', content: description});
+        this.meta.updateTag({
+            name: 'description',
+            content: rawHtml.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 160).trim()
+        });
     }
 }

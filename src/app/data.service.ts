@@ -19,11 +19,11 @@ export class DataService {
   }
 
   getPost(slug: String): Observable<Post> {
-    return this.http.get<Post>('https://api.mika.house/post/' + slug);
+    return this.http.get<Post>(`https://api.mika.house/post/${slug}`);
   }
 
   getLatestPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>('https://api.mika.house/latest/' + this.postCount);
+    return this.http.get<Post[]>(`https://api.mika.house/latest/${this.postCount}`);
   }
 
   createPost(post: Post): Observable<Post> {
@@ -31,11 +31,11 @@ export class DataService {
   }
 
   updatePost(post: Post): Observable<Post> {
-    return this.http.put<Post>('https://api.mika.house/post/' + post.slug, post);
+    return this.http.put<Post>(`https://api.mika.house/post/${post.slug}`, post);
   }
 
   deletePost(slug: String): Observable<any> {
-    return this.http.post<any>('https://api.mika.house/post/' + slug, {});
+    return this.http.post<any>(`https://api.mika.house/post/${slug}`, {});
   }
 
   uploadImage(form:any): Observable<any> {
@@ -43,6 +43,6 @@ export class DataService {
   }
 
   tagSearch(tag: String): Observable<Post[]> {
-    return this.http.get<Post[]>('https://api.mika.house/tags/' + tag);
+    return this.http.get<Post[]>(`https://api.mika.house/tags/${tag}`);
   }
 }

@@ -26,3 +26,21 @@ html, body{
 .m-0 {
     margin: 0;
 }
+
+.delete-post{
+    float: right;
+    color: lightblue;
+}
+
+.logout{    
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    
+    i{
+        font-size: 2rem;
+        margin: 1rem;
+        color: lightblue;
+    }
+}
