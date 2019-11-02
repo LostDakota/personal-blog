@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drew Mika Resume</title>
+    <link rel="stylesheet" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-family: Raleway, sans-serif;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: .5rem 0;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #EFEFEF;
+            padding: 2rem 0 2rem;
+        }
+
+        .my-info {
+            list-style-type: none;
+        }
+
+        .bumper {
+            height: 1rem;
+            background-color: #235e71;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .t-right {
+            text-align: right;
+        }
+
+        a {
+            color: #6ea9a9;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #235e71;
+        }
+
+        ul {
+            list-style-position: outside;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .nolist {
+            list-style: none;
+        }
+
+        .tags {
+            padding: 0;
+            margin-left: 0;
+        }
+
+        .tags .tag {
+            list-style: none;
+            display: inline-block;
+        }
+
+        .tag {
+            background-color: #235e71;
+            color: whitesmoke;
+            padding: .5rem;
+            border-radius: 3px;
+            margin: 1rem .5rem 0 0;
+            transition: .5s ease-in-out;
+        }
+
+        .tag:hover {
+            transform: scale(1.03);
+        }
+
+        .section {
+            margin-top: 1.5rem;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #235e71;
+            margin-top: 1rem;
+        }
+
+        .footer i {
+            color: whitesmoke;
+            margin: 1rem;
+            font-size: 1.5rem;
+        }
+
+        @keyframes jiggle {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: scale(1.1) rotate(0deg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .footer i:hover {
+            animation: jiggle .5s infinite;
+        }
+
+        i {
+            margin-left: .5rem;
+        }
+
+        .t-center {
+            text-align: center;
+        }
+
+        .mobile-contact {
+            transition: max-height .25s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .open-mobile-contact {
+            transition: max-height .5s ease-in-out;
+            max-height: 100vh;
+        }
+
+        .f-right {
+            float: right;
+        }
+
+        .d-inline {
+            display: inline-block;
+        }
+
+        .transition-effect {
+            animation: warewolf .5s;
+            transition: opacity .5s;
+            opacity: 1;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) scale(0);
+            }
+        }
+
+        .m-icon {
+            position: absolute;
+            right: 1rem;
+            margin-top: .2rem;
+            transition: all .5s ease-in-out;
+        }
+
+        .hidden {
+            opacity: 0;
+            animation: spin .5s ease-in-out;
+        }
+
+        #contact-list {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bumper"></div>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>DREW MIKA</h1>
+                    <h4 class="d-inline">Application Developer</h4>
+                    <div class="d-inline d-md-none t-right f-right">
+                        <a href="#" onclick="toggleMobileContact()" style="margin-right: 2rem;">Contact Info
+                            <i class="m-icon fas fa-fw fa-address-book"></i>
+                            <i class="m-icon fas fa-fw fa-chevron-circle-down hidden"></i>
+                        </a>
+                        <ul class="mobile-contact nolist contact-injection"></ul>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-6 t-right">
+                    <ul class="nolist contact-injection"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container section">
+        <div class="row">
+            <div class="col">
+                <h2>Resume Objective</h2>
+                <ul>
+                    <li>4 years of experience working in an Agile, Microsoft based environment.</li>
+                    <li>Proven ability to design and implement large, complex web applications in a corporate
+                        environment while upholding design and architectural standards.</li>
+                    <li>Extensive knowledge of from end frameworks and Javascript which allows for terrific user
+                        experiences.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container section">
+        <div class="row">
+            <div class="col">
+                <h2>Skills</h2>
+                <ul class="tags objectives">
+                    <li class="tag">HTML 5</li>
+                    <li class="tag">CSS 3</li>
+                    <li class="tag">Javascript (vanilla, ES6, jQuery)</li>
+                    <li class="tag">Angular, Angularjs, React</li>
+                    <li class="tag">.NET C#</li>
+                    <li class="tag">Microsoft SQL / MySQL / MariaDB</li>
+                    <li class="tag">Node.js</li>
+                    <li class="tag">Sitecore</li>
+                    <li class="tag">IIS</li>
+                    <li class="tag">Apache & NGINX</li>
+                    <li class="tag">Linux / UNIX</li>
+                    <li class="tag">Docker</li>
+                    <li class="tag">Jenkins</li>
+                    <li class="tag">Apache Solr</li>
+                    <li class="tag">Git</li>
+                    <li class="tag">MongoDB</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container section">
+        <div class="row">
+            <div class="col">
+                <h2>Experience</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Application Developer</h3>
+                <h4>Hyland Software, Inc. / Cleveland Ohio / February 2016 - Present</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>Lead developer on a massive social support web application for users and parters of Hyland
+                        Software products.</li>
+                    <li>Architected solutions to large scale problems dealing with user generated content, activity
+                        streams and notifications.</li>
+                    <li>Helped to develop a culture that fostered best practices and code quality.</li>
+                    <li>Mentored junior/new developers on a small team and helped with onboarding to ensure that team
+                        vision was passed down thought new hires.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Sign Shop Manager</h3>
+                <h4>R.L. Lipton, LLC / Youngstown Ohio / September 2006 - February 2016</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>Created all printed material for a regional Anheuser-Busch distributor.</li>
+                    <li>Maintaned costs by tracking consumable costs and evaluating alternate means for procurement.
+                    </li>
+                    <li>Worked efficiently and quickly to provide customers with supporting materials for expanding and
+                        increasing sales.</li>
+                    <li>Maintained equipment and network for all hardware and software dealing with the production of
+                        customer facing materials.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container section">
+        <div class="row">
+            <div class="col">
+                <h2>Education</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Bachelor's of Graphic Design</h3>
+                <p>Youngstown State University</p>
+                <p>Youngstown, Ohio / 2006</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer t-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="mailto:drew@mika.house" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin/in/drewmika" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/lostdakota" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://mika.house" title="Mika.House website">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span id="contact-list">
+        <li title="Email Me">
+            <a href="mailto:drew@mika.house">drew@mika.house
+                <i class="fas fa-fw fa-envelope"></i>
+            </a>
+        </li>
+        <li title="Give me a call">
+            <a href="tel:+13307749244">330.774.9244
+                <i class="fas fa-fw fa-phone"></i>
+            </a>
+        </li>
+        <li title="Drew's LinkedIn">
+            <a href="https://linkedin.com/in/drewmika" target="_blank">linkedin.com/in/drewmika
+                <i class="fab fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+        <li title="Drew's GitHub">
+            <a href="https://github.com/lostdakota" target="_blank">github.com/LostDakota
+                <i class="fab fa-fw fa-github"></i>
+            </a>
+        </li>
+        <li title="Drew's Website">
+            <a href="https://mika.house" target="_blank">Mika.House
+                <i class="fas fa-fw fa-globe"></i>
+            </a>
+        </li>
+    </span>
+
+    <script>
+        function toggleMobileContact() {
+            var t = document.querySelector('.mobile-contact');
+            t.classList.toggle('open-mobile-contact');
+            var ab = document.querySelector('.fa-address-book');
+            var cd = document.querySelector('.fa-chevron-circle-down');
+            ab.classList.toggle('hidden');
+            cd.classList.toggle('hidden');
+        }
+
+        (function() {
+            var contacts = document.querySelectorAll('.contact-injection');
+            var template = document.getElementById('contact-list');
+            for(var i = 0; i < contacts.length; i++){
+                contacts[i].innerHTML = template.innerHTML;
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

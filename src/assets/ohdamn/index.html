@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://allfont.net/allfont.css?fonts=comic-sans-ms" rel="stylesheet" type="text/css" />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: url('background.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: red;
+            }
+            h1{
+                text-align: center;
+                transform: rotate(-10deg);
+                margin: auto;
+                text-align: center;
+                top: 50%;
+                line-break: auto;
+                font-size: 8rem;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
+            }
+            img {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                width:50px;
+            }
+            .spin {
+                animation-name: spinit;
+                animation-duration: 2s;
+            }
+
+            @keyframes spinit {
+                from{
+                    transform: rotate(0deg);
+                }
+                to{
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <img id="yellow" src="asian.jpg" alt="">
+        
+        <script>
+            document.querySelector('#yellow').addEventListener('click', e => {
+                e.target.classList.add('spin');
+                setTimeout(() => {
+                    e.target.classList.remove('spin');
+                }, 2000);
+            })
+        </script>
+    </body>
+</html>
