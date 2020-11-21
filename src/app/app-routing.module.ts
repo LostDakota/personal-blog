@@ -8,7 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PostComponent } from './post/post.component';
 import { LoginComponent } from './login/login.component';
 import { CreateComponent } from './create/create.component';
-import { AuthGuardService } from './auth-guard.service';
+import { AuthGuardService } from './services/auth-guard.service';
 import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from './services/authentication.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { TitleService } from './title.service';
+import { TitleService } from './services/title.service';
 import { filter } from 'rxjs/operators';
 
 @Component({

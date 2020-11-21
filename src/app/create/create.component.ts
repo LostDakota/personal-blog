@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { Post } from '../models/post.model';
 
 @Component({
@@ -43,6 +43,14 @@ export class CreateComponent implements OnInit {
   }
 
   get f() {return this.newPostForm.controls;}
+
+  focusEditor(e) {
+    if(e.keyCode === 9) {
+      e.preventDefault();
+      let editor = <HTMLElement>document.querySelector('.ql-editor');
+      editor.focus();
+    }
+  }
 
   onSubmit() {
     this.submitted = true;

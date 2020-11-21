@@ -5,7 +5,7 @@
       <span *ngIf="isAuthenticated"><i (click)="edit(post$?.slug)" class="fa fa-edit clickable"></i></span>
       <h1>{{ post$?.title }}</h1>
       <h6>{{ post$?.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
-      <div [innerHTML]="post$?.content"></div>
+      <div [innerHTML]="post$?.content | safeHtml"></div>
       <div class="tags" *ngIf="post$?.tags">
         <a routerLink="/blog/{{tag}}" class="tag" *ngFor="let tag of post$?.tags">{{tag}}</a>
       </div>
@@ -14,7 +14,3 @@
     </div>
   </div>
 </div>
-
-<link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css" as="style" onload="this.rel='stylesheet'" integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/solarized-dark.min.css">
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" integrity="sha384-BlPof9RtjBqeJFskKv3sK3dh4Wk70iKlpIe92FeVN+6qxaGUOUu+mZNpALZ+K7ya" crossorigin="anonymous"></script>

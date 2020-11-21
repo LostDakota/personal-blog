@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { Post } from '../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
-import { TitleService } from '../title.service';
-import { DescriptionService } from '../description.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { TitleService } from '../services/title.service';
+import { DescriptionService } from '../services/description.service';
 
 @Component({
   selector: 'app-post',
@@ -23,7 +23,7 @@ export class PostComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private titleService: TitleService,
-    private descriptionService: DescriptionService
+    private descriptionService: DescriptionService    
   ) { };
 
   ngOnInit() {
@@ -38,12 +38,6 @@ export class PostComponent implements OnInit {
           this.loadDisqus();
         }
       );
-  }
-
-  ngAfterViewInit() {
-    var scr = document.createElement('script');
-    scr.src = '/hl.js';
-    document.body.appendChild(scr);
   }
 
   loadDisqus() {

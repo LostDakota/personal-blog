@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { DescriptionService } from '../description.service';
+import { DescriptionService } from '../services/description.service';
 
 @Component({
   selector: 'app-contact',

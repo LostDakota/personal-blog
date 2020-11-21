@@ -19,8 +19,9 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 
 
-import { Summary } from './summary.pipe';
-import { TitleService } from './title.service';
+import { Summary } from './pipes/summary.pipe';
+import { Safe } from './pipes/safeHtmlPipe';
+import { TitleService } from './services/title.service';
 
 export function tokenGetter(){
   return localStorage.getItem('token');
@@ -39,7 +40,8 @@ export function tokenGetter(){
     LoginComponent,
     CreateComponent,
     EditComponent,
-    Summary    
+    Summary,
+    Safe
   ],
   imports: [
     BrowserModule,
