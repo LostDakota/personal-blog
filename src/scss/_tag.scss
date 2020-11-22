@@ -20,12 +20,10 @@
     padding: 3px 8px;
     transition: $quick;
 
-    &:before {
-        content: '\f02b';
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
+    img {
         margin-right: 10px;
-        color: $white;
+        width: .75rem;
+        height: .75rem;
         margin-right: 5px;
         display: inline-block;
         animation-iteration-count: 3;    
@@ -35,7 +33,7 @@
     &:hover {
         color: $white;
 
-        &:before {
+        img {
             animation-name: wiggle;
         }   
     }

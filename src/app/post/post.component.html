@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col">
     <div class="card ng-cloak" [ngClass]="{'ng-show': isVisible}">
-      <span *ngIf="isAuthenticated"><i (click)="deletePost(post$?.slug)" class="fa fa-trash clickable"></i></span>
-      <span *ngIf="isAuthenticated"><i (click)="edit(post$?.slug)" class="fa fa-edit clickable"></i></span>
+      <span *ngIf="isAuthenticated" (click)="deletePost(post$?.slug)" class="clickable edit-or-delete">Delete</span>
+      <span *ngIf="isAuthenticated" (click)="edit(post$?.slug)" class="clickable edit-or-delete">Edit</span>
       <h1>{{ post$?.title }}</h1>
       <h6>{{ post$?.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
       <div [innerHTML]="post$?.content"></div>
       <div class="tags" *ngIf="post$?.tags">
-        <a routerLink="/blog/{{tag}}" class="tag" *ngFor="let tag of post$?.tags">{{tag}}</a>
+        <a routerLink="/blog/{{tag}}" class="tag" *ngFor="let tag of post$?.tags"><img src="/assets/icons/tag.svg" alt="">{{tag}}</a>
       </div>
       <div id="disqus_thread"></div>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered byDisqus.</a></noscript>

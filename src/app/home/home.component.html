@@ -16,7 +16,7 @@
             <a routerLink="/post/{{post.slug}}" title="Go to the post {{post.title}}" class="color-link">... read more</a>
         </div>
         <div class="tags" *ngIf="post.tags.length > 0">
-            <a routerLink="/blog/{{tag}}" title="{{tag}}" class="tag" *ngFor="let tag of post.tags">{{tag}}</a>
+            <a routerLink="/blog/{{tag}}" title="{{tag}}" class="tag" *ngFor="let tag of post.tags"><img src="/assets/icons/tag.svg" alt="">{{tag}}</a>
         </div>
     </div>
 </div>

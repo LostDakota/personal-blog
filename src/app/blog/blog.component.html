@@ -18,8 +18,8 @@
       </h2>      
       <h6>{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
       <div [innerHTML]="post.content | summary"></div>
-      <div class="tags" *ngIf="post.tags.length > 0">
-        <a href="/blog/{{tag}}" title="{{tag}}" class="tag clickable" *ngFor="let tag of post.tags">{{tag}}</a>
+      <div class="tags" *ngIf="post.tags.length > 0">        
+        <a href="/blog/{{tag}}" title="{{tag}}" class="tag clickable" *ngFor="let tag of post.tags"><img src="/assets/icons/tag.svg" alt="">{{tag}}</a>
       </div>
     </div>
   </div>
