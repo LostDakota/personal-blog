@@ -1,71 +1,37 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { BlogComponent } from './blog/blog.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { PostComponent } from './post/post.component';
-import { LoginComponent } from './login/login.component';
-import { CreateComponent } from './create/create.component';
 import { AuthGuardService } from './services/auth-guard.service';
-import { EditComponent } from './edit/edit.component';
 
-const routes: Routes = [
+const routes: Routes = [  
   {
     path: 'blog',
-    component: BlogComponent,
-    data: {
-      title: 'Blog - Mika House Web Development'
-    }
-  },
-  {
-    path: 'blog/:tag',
-    component: BlogComponent,
-    data: {
-      title: 'Blog - Mika House Web Development'
-    }
-  },
-  {
-    path: 'about',
-    component: AboutComponent,
-    data: {
-      title: 'About - Mika House Web Development'
-    }
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-    data: {
-      title: 'Contact - Mika House Web Development'
-    }
-  },
-  {
-    path: 'post/:slug',
-    component: PostComponent
-  },
-  {
-    path: 'post/edit/:slug',
-    component: EditComponent
+    loadChildren: './blog/blog.module#BlogModule'
   },
   {
     path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login'
-    }
+    loadChildren: './login/login.module#LoginModule'
+  },
+  {
+    path: 'post',
+    loadChildren: './post/post.module#PostModule'
+  },
+  {
+    path: 'about',
+    loadChildren: './about/about.module#AboutModule'
+  },
+  {
+    path: 'contact',
+    loadChildren: './contact/contact.module#ContactModule'
   },
   {
     path: 'create',
-    component: CreateComponent,
+    loadChildren: './create/create.module#CreateModule',
     canActivate: [AuthGuardService]
   },
   {
     path: '**',
-    component: HomeComponent,
-    data: {
-      title: 'Mika House Web Development'
-    }
+    loadChildren: './home/home.module#HomeModule',
   }
 ];
 

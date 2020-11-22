@@ -12,7 +12,7 @@
         </h2>
         <h6>{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
         <div>
-            <span [innerHTML]="post.content | summary: post._id"></span>
+            <span [innerHTML]="post.content | summary"></span>
             <a routerLink="/post/{{post.slug}}" title="Go to the post {{post.title}}" class="color-link">... read more</a>
         </div>
         <div class="tags" *ngIf="post.tags.length > 0">
