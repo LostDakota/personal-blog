@@ -9,6 +9,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { TitleService } from './services/title.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 export function tokenGetter(){
   return localStorage.getItem('token');
@@ -23,7 +24,7 @@ export function tokenGetter(){
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule,    
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -33,7 +34,8 @@ export function tokenGetter(){
     })
   ],
   providers: [
-    TitleService
+    TitleService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

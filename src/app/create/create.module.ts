@@ -13,7 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     CreateRoutingModule,
     QuillModule,
-    AuthGuardService,
     FormsModule,
     ReactiveFormsModule
   ],
