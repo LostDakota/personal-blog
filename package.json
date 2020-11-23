@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod": "ng build --prod --build-optimizer --vendor-chunk=true"
+    "build-prod": "ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer"
   },
   "private": true,
   "dependencies": {
