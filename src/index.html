@@ -27,38 +27,37 @@
   <meta name="msapplication-TileColor" content="#235E71">
   <meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png">
 
-  <link rel="preconnect" 
-        href="https://fonts.gstatic.com" 
-        crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" 
-        rel="preload" 
-        as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="preload" as="style">
 
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-        media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" media="print" onload="this.media='all'" />
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css"
-    as="style" onload="this.rel='stylesheet'"
-    integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4" crossorigin="anonymous">
-
-  <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
-    integrity="sha384-BlPof9RtjBqeJFskKv3sK3dh4Wk70iKlpIe92FeVN+6qxaGUOUu+mZNpALZ+K7ya"
-    crossorigin="anonymous"></script>
-
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
   <noscript>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" />
-   </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" />
+    Uh oh. It seems like you have Javascript disabled. *sadface*
+  </noscript>
 </head>
 
 <body>
-  <noscript>Uh oh. It seems like you have Javascript disabled. *sadface*</noscript>
   <app-root id="main"></app-root>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124651312-1"></script>
-  <script async src="/extras.js"></script>    
+  <script>
+    addEventListener('load', function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-124651312-1');
+    });
+
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+      navigator.serviceWorker
+        .register('/service-worker.js');
+    }
+  </script>
 </body>
 
 </html>

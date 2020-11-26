@@ -23,7 +23,7 @@ export class PostComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private titleService: TitleService,
-    private descriptionService: DescriptionService    
+    private descriptionService: DescriptionService
   ) { };
 
   ngOnInit() {
@@ -47,10 +47,10 @@ export class PostComponent implements OnInit {
       s.src = '//mika-house.disqus.com/embed.js';
 
       s.setAttribute('data-timestamp', new Date().toString());
-      if(document.querySelector('#disqus_thread')){
+      if (document.querySelector('#disqus_thread')) {
         (d.head || d.body).appendChild(s);
       }
-    }, 1000);    
+    }, 1000);
   }
 
   deletePost(postId: String) {

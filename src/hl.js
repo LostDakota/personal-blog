@@ -1,9 +1,9 @@
-addEventListener('load', () => {
+setTimeout(function () {
     hljs.configure({
         languages: ['javascript', 'typescript']
     });
 
-    document.querySelectorAll('pre').forEach(block => {
+    Array.from(document.querySelectorAll('pre')).forEach(block => {
         hljs.highlightBlock(block);
     });
-});
+}, 300);
