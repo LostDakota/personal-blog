@@ -27,9 +27,17 @@
   <meta name="msapplication-TileColor" content="#235E71">
   <meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" 
+        href="https://fonts.gstatic.com" 
+        crossorigin />
 
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" 
+        rel="preload" 
+        as="style">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+        media="print" onload="this.media='all'" />
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css"
     as="style" onload="this.rel='stylesheet'"
@@ -39,6 +47,10 @@
     integrity="sha384-BlPof9RtjBqeJFskKv3sK3dh4Wk70iKlpIe92FeVN+6qxaGUOUu+mZNpALZ+K7ya"
     crossorigin="anonymous"></script>
 
+
+  <noscript>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" />
+   </noscript>
 </head>
 
 <body>
