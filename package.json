@@ -10,6 +10,12 @@
     "e2e": "ng e2e",
     "build-prod": "ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer"
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
