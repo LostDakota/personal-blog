@@ -9,14 +9,14 @@ $blue: #235E71;
 $slate: darkslategray;
 
 $colors: (
-    white: $white,
-    lightestgray: $lightestgray,
-    lightgray: $lightgray,
-    gray: $gray,
-    darkgray: $darkgray,
-    lightblue: $lightblue,
-    blue: $blue,
-    slate: $slate
+    "white": $white,
+    "lightestgray": $lightestgray,
+    "lightgray": $lightgray,
+    "gray": $gray,
+    "darkgray": $darkgray,
+    "lightblue": $lightblue,
+    "blue": $blue,
+    "slate": $slate
 );
 
 @each $name, $color in $colors {
