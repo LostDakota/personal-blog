@@ -11,3 +11,7 @@
 @import './scss/card';
 
 @import './scss/tag';
+
+@import '../node_modules/quill/dist/quill.core.css';
+@import '../node_modules/quill/dist/quill.snow.css';
+@import '../node_modules/quill/dist/quill.bubble.css';

@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
 
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 
-    setTimeout(function(){
-      document.getElementById('user-name').focus();
-    }, 100)
+    setTimeout(() => document.getElementById('username').focus(), 300);
   }
 
   get f() {return this.loginForm.controls;}
@@ -49,9 +47,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
-        () => {
-          document.location.href = this.returnUrl;
-        },
+        () => document.location.href = this.returnUrl,
         () => {
           this.loading = false;
           this.router.navigate(['/login']);

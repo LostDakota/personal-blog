@@ -1,10 +1,9 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/solarized-dark.min.css">
 <h2>Write a new post</h2>
 <div class="row">
   <div class="col">
     <form [formGroup]="newPostForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <input placeholder="Title" type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" (keydown)='focusEditor($event)' />
+        <input placeholder="Title" type="text" formControlName="title" class="form-control" [ngClass]="{'is-invalid': submitted && f.title.errors}" (keydown)='focusEditor($event)' />
         <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
           <div *ngIf="f.title.errors.required">Title is required</div>
         </div>

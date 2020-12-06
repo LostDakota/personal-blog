@@ -7,8 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['../../../node_modules/quill/dist/quill.snow.css']
+  templateUrl: './edit.component.html'
 })
 
 export class EditComponent implements OnInit {

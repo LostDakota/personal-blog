@@ -18,7 +18,6 @@ export class PostComponent implements OnInit {
   post$: Post;
   isAuthenticated: boolean;
   isVisible = false;
-  urls = ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js", "/hl.js"]
 
   constructor(
     private data: DataService,
@@ -44,11 +43,9 @@ export class PostComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.urls.forEach(url => {
-      const d = document, scrpt = d.createElement('script');
-      scrpt.src = url;
+    const d = document, scrpt = d.createElement('script');
+      scrpt.src = "/hl.js";
       d.body.appendChild(scrpt);
-    });
   }
 
   loadDisqus() {
