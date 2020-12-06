@@ -16,4 +16,5 @@ import { Safe } from './safe.html.pipe';
     Safe
   ]
 })
+
 export class SharedModule { }
