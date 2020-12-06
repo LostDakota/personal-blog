@@ -17,10 +17,6 @@ a {
 
 p {
     margin-bottom: 1rem;
-
-    &:last-of-type{
-        margin-bottom: 0;
-    }
 }
 
 h1 {
@@ -134,4 +130,22 @@ ol, ul {
 
 .t-center {
     text-align: center;
+}
+
+.section-heading {
+    font-size: 1.25rem;
+    color: $slate;
+    text-align: center;
+}
+
+.t-small {
+    font-size: .7rem;
+}
+
+.t-muted {
+    color: rgba(0, 0, 0, .9);
+}
+
+.cr {
+    margin-bottom: 1rem;
 }

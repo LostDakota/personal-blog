@@ -5,12 +5,12 @@
         </h1>
         <p>This website is dedicated to web and application development, technology and other geeky stuff that all your cool friends (or spouse, in my case) will roll their eyes about.</p>
     </div>
-    <h3>Latest Posts</h3>
+    <p class="section-heading">Latest Posts</p>
     <div class="card" *ngFor="let post of posts$">
         <h2>
             <a title="{{post.title}}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
         </h2>
-        <h6>{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
+        <p class="t-small t-muted">{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</p>
         <div>
             <span [innerHTML]="post.content | summary"></span>
             <a routerLink="/post/{{post.slug}}" title="Go to the post {{post.title}}" class="color-link">... read more</a>

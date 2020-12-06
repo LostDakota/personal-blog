@@ -1,6 +1,6 @@
 <div class="row ng-cloak" [ngClass]="{'ng-show': isVisible}">
   <div class="col-12">
-    <h1 class="c-slate t-center">Blog Posts</h1>
+    <p class="section-heading">Blog Posts</p>
   </div>
   <div class="col" *ngIf="posts$.length > 0">
     <div class="div" *ngIf="filter">
@@ -16,7 +16,7 @@
       <h2>
         <a title="{{ post.title }}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
       </h2>      
-      <h6>{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</h6>
+      <p class="t-small t-muted">{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</p>
       <div [innerHTML]="post.content | summary"></div>
       <div class="tags" *ngIf="post.tags.length > 0">        
         <a href="/blog/{{tag}}" title="{{tag}}" class="tag clickable" *ngFor="let tag of post.tags"><img width="12" height="12" src="/assets/icons/tag.svg" alt="">{{tag}}</a>

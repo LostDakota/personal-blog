@@ -13,7 +13,7 @@
 .tag{
     font-size: .75rem;
     border-radius: 1rem;
-    display: inline;
+    display: inline-block;
     margin-right: .5rem;
     background-color: $lightblue;
     color: $slate;
@@ -34,6 +34,11 @@
         img {
             animation-name: wiggle;
         }   
+    }
+
+    @media(max-width: 600px) {
+        font-size: 1rem;
+        padding: 5px 10px;
     }
 }
 
