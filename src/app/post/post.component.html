@@ -3,7 +3,7 @@
     <div class="card ng-cloak" [ngClass]="{'ng-show': isVisible}">
       <span *ngIf="isAuthenticated" (click)="deletePost(post$?.slug)" class="clickable edit-or-delete">Delete</span>
       <span *ngIf="isAuthenticated" (click)="edit(post$?.slug)" class="clickable edit-or-delete">Edit</span>
-      <h1>{{ post$?.title }}</h1>
+      <h1 class="c-slate">{{ post$?.title }}</h1>
       <p class="t-small t-muted">{{ post$?.createdAt | date: 'LLL d, yyyy h:mm a' }}</p>
       <div [innerHTML]="post$?.content"></div>
       <div class="tags" *ngIf="post$?.tags">

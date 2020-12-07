@@ -8,7 +8,7 @@
     <p class="section-heading">Latest Posts</p>
     <div class="card" *ngFor="let post of posts$">
         <h2>
-            <a title="{{post.title}}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
+            <a class="c-slate" title="{{post.title}}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
         </h2>
         <p class="t-small t-muted">{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</p>
         <div>
