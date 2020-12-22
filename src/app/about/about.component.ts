@@ -21,7 +21,7 @@ export class AboutComponent {
       this.isVisible = !this.isVisible;
     }, 100);    
 
-    if(this.checkBrowserSupport) {
+    if(this.checkBrowserSupport()) {
       this.imageUrl = "/assets/drew.webp";
     } else {
       this.imageUrl = "/assets/drew.jpg";
