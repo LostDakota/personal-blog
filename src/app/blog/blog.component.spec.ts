@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { Summary } from '../shared/shared/summary.pipe';
 
 import { BlogComponent } from './blog.component';
 
@@ -8,7 +11,8 @@ describe('BlogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogComponent ]
+      declarations: [ BlogComponent, Summary ],
+      imports: [ RouterModule, HttpClientModule, RouterModule.forRoot([]) ]
     })
     .compileComponents();
   }));

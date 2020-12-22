@@ -5,6 +5,7 @@ import { CreateRoutingModule } from './create.routing.module';
 import { CreateComponent } from './create.component';
 import { QuillModule } from 'ngx-quill';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CreateComponent],
@@ -15,6 +16,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [CreateComponent]
+  exports: [
+    CreateComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    CreateRoutingModule
+  ],
+  providers: [RouterModule]
 })
 export class CreateModule { }

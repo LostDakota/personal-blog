@@ -12,6 +12,10 @@ import { QuillModule } from 'ngx-quill';
     ReactiveFormsModule,
     QuillModule
   ],
-  exports: [EditComponent]
+  exports: [
+    EditComponent,
+    FormsModule,
+    ReactiveFormsModule
+  ]
 })
 export class EditModule { }

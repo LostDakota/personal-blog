@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { QuillModule } from 'ngx-quill';
 
 import { CreateComponent } from './create.component';
 
@@ -8,7 +12,8 @@ describe('CreateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateComponent ]
+      declarations: [ CreateComponent ],
+      imports: [FormsModule, ReactiveFormsModule, QuillModule, RouterModule.forRoot([]), HttpClientModule]
     })
     .compileComponents();
   }));

@@ -10,7 +10,7 @@ import { DescriptionService } from '../services/description.service';
 
 export class AboutComponent {
   isVisible = false;
-  imageUrl = "/assets/drew.jpg";
+  imageUrl = ''
 
   constructor(
     private descriptionService: DescriptionService
@@ -23,6 +23,8 @@ export class AboutComponent {
 
     if(this.checkBrowserSupport) {
       this.imageUrl = "/assets/drew.webp";
+    } else {
+      this.imageUrl = "/assets/drew.jpg";
     }
 
     this.descriptionService.updateDescription('My name is Drew Mika and I am a full stack developer who is passionate about Javascript and front end. I work fulltime in Sitecore and C# at Hyland Software in Westlake, Ohio.')

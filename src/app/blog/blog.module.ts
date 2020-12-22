@@ -14,7 +14,10 @@ import { SharedModule } from '../shared/shared/shared.module';
     BlogRoutingModule,
     SharedModule
   ],
-  exports: [BlogComponent]
+  exports: [
+    BlogComponent,
+    BlogRoutingModule
+  ]
 })
 
 export class BlogModule { }

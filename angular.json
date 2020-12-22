@@ -52,6 +52,9 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "es5": {
+              "tsConfig": "src/tsconfig-es5.app.json"
             }
           }
         },
@@ -62,7 +65,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "developer-blog:build:production"
+              "browserTarget": "app:build:es5"
             }
           }
         },

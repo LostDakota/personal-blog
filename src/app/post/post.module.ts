@@ -4,6 +4,7 @@ import { PostComponent } from './post.component';
 import { SharedModule } from '../shared/shared/shared.module';
 import { PostRoutingModule } from './post-routing.module';
 import { EditModule } from '../edit/edit.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [PostComponent],
@@ -11,9 +12,14 @@ import { EditModule } from '../edit/edit.module';
     CommonModule,
     SharedModule,
     PostRoutingModule,
-    EditModule
+    EditModule,
+    RouterModule
   ],
-  exports: [PostComponent]
+  exports: [
+    PostComponent,
+    PostRoutingModule,
+    RouterModule
+  ]
 })
 
 export class PostModule { }
