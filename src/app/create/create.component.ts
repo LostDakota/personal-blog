@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { Post } from '../models/post.model';
+import { ScriptService } from '../services/dom.service';
 
 @Component({
   selector: 'app-create',
@@ -30,7 +31,8 @@ export class CreateComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private dataService: DataService
+    private dataService: DataService,
+    private scriptService: ScriptService
   ) { };
 
   ngOnInit() {
@@ -40,6 +42,8 @@ export class CreateComponent implements OnInit {
       tags: ['', Validators.required],
       description: ['', Validators.required]
     });
+
+    this.scriptService.injectScripts();
   }
 
   get f() {return this.newPostForm.controls;}

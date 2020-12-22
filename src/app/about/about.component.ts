@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { elementAt } from 'rxjs/operators';
-import { DescriptionService } from '../services/description.service';
+import { DescriptionService } from '../services/dom.service';
 
 @Component({
   selector: 'app-about',

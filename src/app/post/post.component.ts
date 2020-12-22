@@ -4,7 +4,7 @@ import { Post } from '../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { TitleService } from '../services/title.service';
-import { DescriptionService } from '../services/description.service';
+import { DescriptionService, ScriptService } from '../services/dom.service';
 
 @Component({
   selector: 'app-post',
@@ -26,7 +26,8 @@ export class PostComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private titleService: TitleService,
-    private descriptionService: DescriptionService
+    private descriptionService: DescriptionService,
+    private scriptService: ScriptService
   ) { };
 
   ngOnInit() {
@@ -37,39 +38,25 @@ export class PostComponent implements OnInit {
           this.isVisible = !this.isVisible;
           this.post$ = data;
           this.titleService.setTitle(`${data.title} - Mika House Web Development`);
-          this.descriptionService.updateDescription(data.description);          
-          this.loadDisqus();
+          this.descriptionService.updateDescription(data.description);
+
+          var d = document, s = d.createElement('script');
+
+          s.src = '//mika-house.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', new Date().toString());
+          if (document.querySelector('#disqus_thread')) {
+            (d.head || d.body).appendChild(s);
+          }
         }
       );
-  }
 
-  ngAfterViewInit() {
-    const h = document.getElementsByTagName('head')[0];
-    this.urls.forEach(url => {
-      let script = document.createElement('script');
-      script.src = url;
-      h.appendChild(script);
-    });
-  }
-
-  loadDisqus() {
-    setTimeout(() => {
-      var d = document, s = d.createElement('script');
-
-      s.src = '//mika-house.disqus.com/embed.js';
-
-      s.setAttribute('data-timestamp', new Date().toString());
-      if (document.querySelector('#disqus_thread')) {
-        (d.head || d.body).appendChild(s);
-      }
-    }, 1000);
+    this.scriptService.injectScripts();
   }
 
   deletePost(postId: String) {
     this.data.deletePost(postId)
-      .subscribe(
-        data => this.router.navigate(['/'])
-      );
+      .subscribe(() => this.router.navigate(['/']));
   }
 
   edit(slug: string) {
