@@ -4,31 +4,31 @@ import { Routes, RouterModule, NoPreloading } from '@angular/router';
 const routes: Routes = [  
   {
     path: 'blog',
-    loadChildren: async () => (await import('./blog/blog.module')).BlogModule
+    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
   },
   {
     path: 'login',
-    loadChildren:  async () => (await import('./login/login.module')).LoginModule
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'post',
-    loadChildren: async () => (await import('./post/post.module')).PostModule
+    loadChildren: () => import('./post/post.module').then(m => m.PostModule)
   },
   {
     path: 'about',
-    loadChildren: async () => (await import('./about/about.module')).AboutModule
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
   {
     path: 'contact',
-    loadChildren: async () => (await import('./contact/contact.module')).ContactModule
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   },
   {
     path: 'create',
-    loadChildren: async () => (await import('./create/create.module')).CreateModule
+    loadChildren: () => import('./create/create.module').then(m => m.CreateModule),
   },
   {
     path: '**',
-    loadChildren: async () => (await import('./home/home.module')).HomeModule
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   }
 ];
 
