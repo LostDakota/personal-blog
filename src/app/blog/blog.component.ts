@@ -3,7 +3,7 @@ import { DataService } from '../services/data.service';
 import { Post } from '../models/post.model';
 import { ActivatedRoute } from '@angular/router';
 import { TitleService } from '../services/title.service';
-import { DescriptionService } from '../services/dom.service';
+import { DescriptionService } from '../services/description.service';
 
 @Component({
   selector: 'app-blog',

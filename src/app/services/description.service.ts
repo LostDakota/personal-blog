@@ -18,19 +18,3 @@ export class DescriptionService {
         });
     }
 }
-
-export class ScriptService {
-    urls = ["/hl.js", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"]
-
-    constructor() { }
-
-    injectScripts(){
-        const head = document.getElementsByTagName('head')[0];
-
-        this.urls.forEach(url => {
-            let script = document.createElement('script');
-            script.src = url;
-            head.appendChild(script);
-        })
-    }
-}
