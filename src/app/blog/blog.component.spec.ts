@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { Summary } from '../shared/shared/summary.pipe';
 
@@ -9,10 +9,10 @@ describe('BlogComponent', () => {
   let component: BlogComponent;
   let fixture: ComponentFixture<BlogComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BlogComponent, Summary ],
-      imports: [ RouterModule, HttpClientModule, RouterModule.forRoot([]) ]
+      imports: [ RouterModule, HttpClientModule, RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }) ]
     })
     .compileComponents();
   }));

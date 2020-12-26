@@ -34,7 +34,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
-    { preloadingStrategy: NoPreloading }
+    { preloadingStrategy: NoPreloading, relativeLinkResolution: 'legacy' }
   )],
   exports: [RouterModule]
 })
