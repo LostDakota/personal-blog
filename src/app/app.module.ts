@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { TitleService } from './services/title.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { ScriptService } from './services/dom.service';
 
 export function tokenGetter(){
   return localStorage.getItem('token');
@@ -39,7 +40,8 @@ export function tokenGetter(){
   ],
   providers: [
     TitleService,
-    AuthGuardService
+    AuthGuardService,
+    ScriptService
   ],
   bootstrap: [AppComponent]
 })
