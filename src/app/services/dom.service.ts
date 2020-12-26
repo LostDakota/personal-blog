@@ -19,6 +19,7 @@ export class DescriptionService {
     }
 }
 
+@Injectable()
 export class ScriptService {
     urls = ["/hl.js", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"]
 
