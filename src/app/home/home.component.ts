@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.data.getLatestPosts()
       .subscribe(
         data => {          
-          this.isVisible
+          this.isVisible = true;
           this.posts$ = data;
         }
       )
