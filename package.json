@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod": "npm install && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
-    "build-analyze": "ng build --prod --stats-json && npx webpack-bundle-analyzer dist/developer-blog/stats.json"
+    "build-prod": "npm install && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer && npm run inject-styles",
+    "build-analyze": "ng build --prod --stats-json && npx webpack-bundle-analyzer dist/developer-blog/stats.json",
+    "inject-styles": "node index.js"
   },
   "private": true,
   "dependencies": {
