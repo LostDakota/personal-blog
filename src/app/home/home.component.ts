@@ -18,10 +18,10 @@ export class HomeComponent implements OnInit {
   ) { };  
 
   ngOnInit() {
-    this.isVisible = true;
     this.data.getLatestPosts()
       .subscribe(
         data => {          
+          this.isVisible
           this.posts$ = data;
         }
       )
