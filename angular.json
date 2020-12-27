@@ -57,7 +57,8 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "commonChunk": false
             },
             "es5": {
               "budgets": [
