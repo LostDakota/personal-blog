@@ -1,4 +1,4 @@
-<div class="container ng-cloak" [ngClass]="{'ng-show': isVisible}">
+<div class="container ng-cloak">
     <div class="card">
         <h1 class="c-slate t-center">
         Welcome to Mika House Web Development
@@ -6,7 +6,7 @@
         <p>This website is dedicated to web and application development, technology and other geeky stuff that all your cool friends (or spouse, in my case) will roll their eyes about.</p>
     </div>
     <p class="section-heading">Latest Posts</p>
-    <div class="card" *ngFor="let post of posts$">
+    <div class="card" *ngFor="let post of posts$" [ngClass]="{'ng-show': isVisible}">
         <h2>
             <a class="c-slate" title="{{post.title}}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
         </h2>
