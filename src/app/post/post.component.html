@@ -8,9 +8,9 @@
     <div class="tags" *ngIf="post$?.tags">
       <a routerLink="/blog/{{tag}}" class="tag" *ngFor="let tag of post$?.tags"><img width="12" height="12"
           src="/assets/icons/tag.svg" alt="">{{tag}}</a>
-    </div>
-    <div id="disqus_thread"></div>
+    </div>    
+  </div>
+  <div class="col-12" id="disqus_thread"></div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
         byDisqus.</a></noscript>
-  </div>
 </div>
