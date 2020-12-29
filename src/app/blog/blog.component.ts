@@ -24,13 +24,11 @@ export class BlogComponent implements OnInit {
   ) { };
 
   ngOnInit() {
-
-    // this.filter = this.route.snapshot.paramMap.get('tag');    
-    // console.log(this.route.snapshot.paramMap);
-
-    this.route.firstChild.paramMap.subscribe(params => {
-      this.filter = params.get('tag');
-    });
+    if (this.route.firstChild) {
+      this.route.firstChild.paramMap.subscribe(params => {
+        this.filter = params.get('tag');
+      });
+    }    
     
     if(this.filter){
       this.data.tagSearch(this.filter)
