@@ -4,16 +4,16 @@
       <span *ngIf="currentUrl == '/'"><h2 class="c-slate">Mika House</h2></span>
       <span *ngIf="currentUrl != '/'"><h3 class="c-slate">Mika House</h3></span>
     </div>
-    <div class="col menu-items" [class.active]="currentUrl == '/'" [class.admin-link]="isAuthenticated">
+    <div class="col-3 menu-items" [class.active]="currentUrl == '/'" [class.admin-link]="isAuthenticated">
       <a title="Home" routerLink="">Home</a>
     </div>    
-    <div class="col menu-items" [class.active]="currentUrl == '/blog'" [class.admin-link]="isAuthenticated">
+    <div class="col-3 menu-items" [class.active]="currentUrl == '/blog'" [class.admin-link]="isAuthenticated">
       <a title="Blog" routerLink="blog">Blog</a>
     </div>
-    <div class="col menu-items" [class.active]="currentUrl == '/contact'" [class.admin-link]="isAuthenticated">
+    <div class="col-3 menu-items" [class.active]="currentUrl == '/contact'" [class.admin-link]="isAuthenticated">
       <a title="Contact" routerLink="contact">Contact</a>
     </div>
-    <div class="col menu-items" [class.active]="currentUrl == '/about'" [class.admin-link]="isAuthenticated">
+    <div class="col-3 menu-items" [class.active]="currentUrl == '/about'" [class.admin-link]="isAuthenticated">
       <a title="About" routerLink="about">About</a>
     </div>
   </div>

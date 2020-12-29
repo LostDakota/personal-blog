@@ -1,12 +1,14 @@
-<div class="container">
-    <div class="card">
+<div class="row">
+    <div class="card col-12 m-2-t">
         <h1 class="c-slate t-center">
         Welcome to Mika House Web Development
         </h1>
         <p>This website is dedicated to web and application development, technology and other geeky stuff that all your cool friends (or spouse, in my case) will roll their eyes about.</p>
     </div>
-    <p class="section-heading">Latest Posts</p>
-    <div class="card" *ngFor="let post of posts$" [ngClass]="{'ng-show': isVisible}">
+    <div class="col-12">
+        <p class="section-heading">Latest Posts</p>
+    </div>    
+    <div class="card col-4" *ngFor="let post of posts$" [ngClass]="{'ng-show': isVisible}">
         <h2>
             <a class="c-slate" title="{{post.title}}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
         </h2>
