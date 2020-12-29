@@ -14,7 +14,7 @@ fs.readFile(index, 'utf8', (err, data) => {
         const filePath = path.resolve(`./dist/developer-blog/${actualFileName}`);
         fs.readFile(filePath, 'utf8', (err, d) => {
             if(!err) {
-                let butt = data.replace(toReplace, `<style>${d}</style>`);
+                let butt = data.replace(toReplace, `<style>${d}</style>`).replace(/\n/g, '').replace(/\r/g, '');
                 fs.writeFile(index, butt, 'utf8', () => null);
             }
         });        
