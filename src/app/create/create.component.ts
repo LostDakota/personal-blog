@@ -43,6 +43,7 @@ export class CreateComponent implements OnInit {
       description: ['', Validators.required]
     });
 
+    this.scriptService.injectQuillStyles();
     this.scriptService.injectScripts();
   }
 

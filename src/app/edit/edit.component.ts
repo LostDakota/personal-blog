@@ -4,6 +4,7 @@ import { DataService } from '../services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ScriptService } from '../services/dom.service';
 
 @Component({
   selector: 'app-edit',
@@ -36,10 +37,13 @@ export class EditComponent implements OnInit {
     private data: DataService, 
     private route: ActivatedRoute, 
     private router: Router, 
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private ScriptService: ScriptService
   ) { };
 
   ngOnInit() {
+    this.ScriptService.injectScripts();
+    this.ScriptService.injectQuillStyles();
     this.isAuthenticated = this.authenticationService.isAuthenticated();
     this.updateForm = this.formBuilder.group({
       title: ['', Validators.required],

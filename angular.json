@@ -29,7 +29,8 @@
               "src/service-worker.js",
               "src/manifest.json",
               "src/extras.js",
-              "src/hl.js"
+              "src/hl.js",
+              "src/highlight.min.js"
             ],
             "styles": [
               "src/styles.scss"

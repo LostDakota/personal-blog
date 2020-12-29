@@ -10,7 +10,7 @@ import { QuillModule } from 'ngx-quill';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    QuillModule
+    QuillModule.forRoot()
   ],
   exports: [
     EditComponent,

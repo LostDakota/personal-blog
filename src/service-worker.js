@@ -3,7 +3,10 @@ var filesToCache = [
     'manifest.json',
     '/assets/android-icon-192x192.png',
     '/assets/favicon-16x16.png',
-    '/assets/favicon-96x96.png'
+    '/assets/favicon-96x96.png',
+    '//cdn.quilljs.com/1.3.6/quill.core.css',
+    '//cdn.quilljs.com/1.3.6/quill.snow.css',
+    '//cdn.quilljs.com/1.3.6/quill.bubble.css'
 ];
 
 self.addEventListener('install', function (e) {

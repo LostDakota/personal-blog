@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     CreateRoutingModule,
-    QuillModule,
+    QuillModule.forRoot(),
     FormsModule,
     ReactiveFormsModule
   ],
