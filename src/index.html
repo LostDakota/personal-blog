@@ -32,7 +32,7 @@
 <script>
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     if(prefersDarkScheme && localStorage.getItem('mode') !== 'light') {
-        localStorage.setItem('mode', 'dark')
+        localStorage.setItem('mode', 'dark');
         document.body.classList.add('dark');
     }
 
