@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col-12 card ng-cloak" [ngClass]="{'ng-show': isVisible}">
+<div class="row ng-cloak" [ngClass]="{'ng-show': isVisible}">
+  <div class="col-12 card" >
     <span *ngIf="isAuthenticated" (click)="deletePost(post$?.slug)" class="clickable edit-or-delete">Delete</span>
     <span *ngIf="isAuthenticated" (click)="edit(post$?.slug)" class="clickable edit-or-delete">Edit</span>
     <h1 class="c-slate">{{ post$?.title }}</h1>

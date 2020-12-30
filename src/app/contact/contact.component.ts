@@ -3,7 +3,8 @@ import { DescriptionService } from '../services/dom.service';
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './contact.component.html'
+  templateUrl: './contact.component.html',
+  host: {'class': 'container'}
 })
 
 export class ContactComponent{

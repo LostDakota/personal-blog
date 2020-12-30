@@ -1,15 +1,6 @@
 <div *ngIf="isAuthenticated" class="logout" (click)="logout()">
   Log Out
 </div>
-
-<div id="header">
-  <app-navigation></app-navigation>
-</div>
-
-<div id="content">
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-</div>
-
-<app-footer id="footer"></app-footer>
+<app-navigation></app-navigation>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

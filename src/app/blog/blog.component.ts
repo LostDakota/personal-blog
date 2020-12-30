@@ -7,7 +7,8 @@ import { DescriptionService } from '../services/dom.service';
 
 @Component({
   selector: 'app-blog',
-  templateUrl: './blog.component.html'
+  templateUrl: './blog.component.html',
+  host: {'class': 'container'}
 })
 
 export class BlogComponent implements OnInit {

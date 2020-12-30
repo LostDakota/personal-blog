@@ -7,7 +7,8 @@ import { ScriptService } from '../services/dom.service';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html'
+  templateUrl: './create.component.html',
+  host: {'class': 'container'}
 })
 
 export class CreateComponent implements OnInit {

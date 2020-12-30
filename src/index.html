@@ -30,16 +30,18 @@
 <app-root id="main"></app-root><script>document.addEventListener('DOMContentLoaded', function() { window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-124651312-1'); }); if ('serviceWorker' in navigator && 'PushManager' in window) { navigator.serviceWorker.register('/service-worker.js'); }</script>
 <img src="/assets/icons/lightbulb.svg" class="lightswitch" onclick="flipTheSwitch()"></div>
 <script>
-    if(localStorage.getItem('mode')) {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    if(prefersDarkScheme && localStorage.getItem('mode') !== 'light') {
+        localStorage.setItem('mode', 'dark')
         document.body.classList.add('dark');
     }
 
     function flipTheSwitch() {
         const body = document.body;
         const stored = localStorage.getItem('mode');
-        if (stored) {
+        if (stored === 'dark') {
             document.body.classList.remove('dark');
-            localStorage.removeItem('mode');
+            localStorage.setItem('mode', 'light');
         } else {
             document.body.classList.add('dark');
             localStorage.setItem('mode', 'dark');

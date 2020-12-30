@@ -8,7 +8,8 @@ import { ScriptService } from '../services/dom.service';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html'
+  templateUrl: './edit.component.html',
+  host: {'class': 'container'}
 })
 
 export class EditComponent implements OnInit {
@@ -70,7 +71,7 @@ export class EditComponent implements OnInit {
     }
 
     this.loading = true;
-
+    debugger;
     this.post$.title = this.f.title.value;
     this.post$.content = this.f.content.value;
     this.post$.tags = this.f.tags.value.split(',');

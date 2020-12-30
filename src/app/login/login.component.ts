@@ -6,7 +6,8 @@ import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  host: {'class': 'container'}
 })
 
 export class LoginComponent implements OnInit {
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 
-    setTimeout(() => document.getElementById('username').focus(), 300);
+    setTimeout(() => document.getElementById('username').focus(), 600);
   }
 
   get f() {return this.loginForm.controls;}

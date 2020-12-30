@@ -5,7 +5,8 @@ import { DescriptionService } from '../services/dom.service';
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.component.html'
+  templateUrl: './about.component.html',
+  host: {'class': 'container'}
 })
 
 export class AboutComponent {

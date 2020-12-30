@@ -16,11 +16,12 @@
     }
 
     a {
+        color: $lightblue;
         text-decoration: underline;
     }
 
     .menu-items{
-        border-bottom: none;
+        border-bottom: 2px solid black;
 
         &.active {
             background-color: gray;    
@@ -50,14 +51,14 @@
 
     .tag {
         background-color: black;
+
+        img {
+            filter: invert(10%);
+        }
     }
 
     .section-heading {
         color: $white;
-    }
-
-    .lightswitch {
-        filter: invert(50%);
     }
 }
 
@@ -67,16 +68,15 @@ html, body{
     width: 100vw!important;
     min-height: 100vh;
     margin: 0;  
-    background: #FAFAFA;
+    background: #F1F2F2;
     position: relative;
+    overflow-x: hidden;
 }
 
 #main {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    width: 100vw;
+    grid-template-rows: auto 0 1fr auto;
 }
 
 .container {
@@ -127,7 +127,7 @@ html, body{
     position: fixed;
     z-index: 10;
     bottom: .5rem;
-    right: .5rem;
+    left: .5rem;
     padding: .5rem;
     background-color: lightblue;
     color: $white;
@@ -139,5 +139,6 @@ html, body{
     right: 1rem;
     width: 3rem;
     height: 3rem;
-    filter: invert(20%);
+    filter: invert(50%);
+    cursor: pointer;
 }
