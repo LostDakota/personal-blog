@@ -4,7 +4,61 @@
 }
 
 .dark {
-    background-color: #333333;
+    background-color: #1d1d1d;
+    color: $white!important;
+
+    .card {
+        background-color: #555555;
+    }
+
+    h1, h2, h3, a, p {
+        color: $white;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .menu-items{
+        border-bottom: none;
+
+        &.active {
+            background-color: gray;    
+            border-bottom: $white;
+
+            a {
+                color: #FAFAFA;
+            }
+        }
+        a {
+            color: lightgray
+        }
+    }
+
+    #header {
+        background-color: black;
+        color: $white!important;
+    }
+
+    #footer {
+        background-color: black;
+    }
+
+    .t-small {
+        color: $white;
+    }
+
+    .tag {
+        background-color: black;
+    }
+
+    .section-heading {
+        color: $white;
+    }
+
+    .lightswitch {
+        filter: invert(50%);
+    }
 }
 
 html, body{
@@ -14,6 +68,7 @@ html, body{
     min-height: 100vh;
     margin: 0;  
     background: #FAFAFA;
+    position: relative;
 }
 
 #main {
@@ -76,4 +131,13 @@ html, body{
     padding: .5rem;
     background-color: lightblue;
     color: $white;
+}
+
+.lightswitch {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    filter: invert(20%);
 }
