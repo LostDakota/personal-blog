@@ -7,7 +7,7 @@ a {
     transition: $quick;
 
     &:hover {
-        color: $lightgray;
+        color: $lightblue;
     }
 
     &:active {
@@ -22,6 +22,7 @@ p {
 
 h1, h2, h3 {
     font-weight: 400;
+    color: $blue;
 }
 
 h1 {
@@ -33,7 +34,7 @@ h1 {
 h2 {
     
     a {
-        color: $darkgray;
+        color: $blue;
         transition: $quick;
 
         &:hover {

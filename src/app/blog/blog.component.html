@@ -13,7 +13,7 @@
   </div>    
   <div class="card col-4" *ngFor="let post of posts$">
     <h2>
-      <a class="c-slate" title="{{ post.title }}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
+      <a title="{{ post.title }}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
     </h2>      
     <p class="t-small t-muted">{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</p>
     <div [innerHTML]="post.content | summary"></div>
