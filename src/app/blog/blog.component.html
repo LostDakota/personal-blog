@@ -2,21 +2,19 @@
   <div class="col-12">
     <p class="section-heading">Blog Posts</p>
   </div>
-  <div class="col-12" *ngIf="filter">
-    <div class="col">
-      <div class="clickable">
-        <a routerLink="/blog">
-          <i class="fa fa-times-circle c-dark-gray"></i> Filter <span class="tag">{{filter}}</span>
-        </a>
-      </div>
-    </div>
+  <div class="col-12 filter" *ngIf="filter">
+    <a routerLink="/blog" target="_self" onclick="setTimeout(() => window.location.reload(), 300)">
+      Filter <span class="tag">{{filter}} X</span>
+    </a>
   </div>    
   <div class="card col-4" *ngFor="let post of posts$">
     <h2>
       <a title="{{ post.title }}" routerLink="/post/{{post.slug}}">{{ post.title }}</a>
     </h2>      
     <p class="t-small t-muted">{{ post.createdAt | date: 'LLL d, yyyy h:mm a' }}</p>
-    <div [innerHTML]="post.content | summary"></div>
+    <p>{{ post.content | summary }}
+      <a routerLink="/post/{{post.slug}}" title="Go to the post {{post.title}}" class="color-link">... read more</a>
+    </p>
     <div class="tags" *ngIf="post.tags.length > 0">        
       <a href="/blog/{{tag}}" title="{{tag}}" class="tag clickable" *ngFor="let tag of post.tags"><img width="12" height="12" src="/assets/icons/tag.svg" alt="">{{tag}}</a>
     </div>

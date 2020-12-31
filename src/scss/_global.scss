@@ -60,6 +60,13 @@
     .section-heading {
         color: $white;
     }
+
+    .filter {
+        .tag {
+            background-color: #555;
+            color: $lightblue
+        }
+    }
 }
 
 html, body{
