@@ -19,4 +19,4 @@ fs.readFile(index, 'utf8', (err, data) => {
             }
         });        
     }
-})
+});
