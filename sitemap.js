@@ -49,7 +49,7 @@ let distinct = (value, index, self) => self.indexOf(value) === index;
                         results.push(d);
                     }
                 });
-                fs.writeFile('./dist/sitemap.xml', sitemapBuilder(results), (err) => {
+                fs.writeFile('./dist/developer-blog/sitemap.xml', sitemapBuilder(results), (err) => {
                     if(err) return err;
                     return true;     
                 });
