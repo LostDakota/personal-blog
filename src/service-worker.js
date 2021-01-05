@@ -6,6 +6,10 @@ var filesToCache = [
     '/assets/favicon-96x96.png'
 ];
 
+var scripts = $scriptReplacement
+
+filesToCache.concat(scripts);
+
 self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open(cacheName).then(function (cache) {

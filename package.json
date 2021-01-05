@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod": "npm install && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod --aot --common-chunk --delete-output-path --buildOptimizer && npm run inject-styles",
+    "build-prod": "npm install && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod --aot --common-chunk --delete-output-path --buildOptimizer",
     "build-analyze": "ng build --prod --stats-json && npx webpack-bundle-analyzer dist/developer-blog/stats.json",
     "inject-styles": "node index.js",
     "generate-sitemap": "PUPPETEER_EXECUTABLE_PATH=\"/usr/bin/chromium-browser\" node sitemap.js"
