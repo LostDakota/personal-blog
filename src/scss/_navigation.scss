@@ -1,5 +1,6 @@
 #header {
     background-color: $white;
+    min-height: 75px;
 }
 
 .site-header-title{
@@ -42,6 +43,7 @@
 #footer {
     background-color: $blue;
     color: $white;
+    min-height: 100px;
 
     img {
         margin: 0 1rem;
