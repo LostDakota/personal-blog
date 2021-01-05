@@ -4,11 +4,11 @@
 }
 
 .dark {
-    background-color: #1d1d1d;
+    background: #1d1d1d;
     color: $white!important;
 
     .card {
-        background-color: #555555;
+        background: #555555;
     }
 
     h1, h2, h3, a, p {
@@ -24,8 +24,8 @@
         border-bottom: 2px solid black;
 
         &.active {
-            background-color: gray;    
-            border-bottom: $white;
+            background: #555;
+            border-bottom: 2px solid $white;
 
             a {
                 color: #FAFAFA;

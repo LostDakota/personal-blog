@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     });
    };
 
-  ngOnInit(){
+  ngOnInit() {
     this.isAuthenticated = this.authenticationService.isAuthenticated();
   }
 
