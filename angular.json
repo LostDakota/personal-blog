@@ -31,9 +31,13 @@
               "src/extras.js",
               "src/hl.js",
               "src/highlight.min.js"
+
             ],
             "styles": [
               "src/styles.scss"
+            ],
+            "allowedCommonJsDependencies": [
+              "zone.js/dist/zone"
             ],
             "scripts": []
           },
