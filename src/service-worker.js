@@ -3,7 +3,12 @@ var filesToCache = [
     'manifest.json',
     '/assets/android-icon-192x192.png',
     '/assets/favicon-16x16.png',
+    '/assets/favicon-32x32.png',
     '/assets/favicon-96x96.png',
+    '/assets/icons/tag.svg',
+    '/assets/icons/linkedin.svg',
+    '/assets/icons/twitter.svg',
+    '/assets/icons/github.svg',
     'https://api.mika.house/latest/3',
     $scriptReplacement
 ];
