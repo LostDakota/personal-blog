@@ -18,12 +18,14 @@ export class HomeComponent implements OnInit {
   ) { };  
 
   ngOnInit() {
-    this.data.getLatestPosts()
+    setTimeout(() => {
+      this.data.getLatestPosts()
       .subscribe(
         data => {          
           this.isVisible = true;
           this.posts$ = data;
         }
       )
+    }, 300);
   }
 }
