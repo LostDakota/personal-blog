@@ -4,7 +4,6 @@
 a {
     text-decoration: none!important;
     color: $darkgray;
-    transition: $quick;
 
     &:hover {
         color: $lightblue;
@@ -21,8 +20,8 @@ p {
 }
 
 h1, h2, h3 {
-    font-weight: 400;
     color: $blue;
+    font-weight: 400;
 }
 
 h1 {
@@ -97,22 +96,17 @@ blockquote {
 
     &:before, &:after {
         color: $gray;
+        font-size: 2rem;
+        line-height: 1rem;
+        vertical-align: bottom;
     }
 
     &:before {
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        content: '\f10d';
-        margin-right: 1rem;
+        content: open-quote;
     }
 
     &:after {
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        content: '\f10e';
-        margin-left: 1rem;
-        position: absolute;
-        right: 1rem;
+        content: close-quote;
     }
 }
 
