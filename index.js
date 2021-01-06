@@ -34,7 +34,7 @@ fs.readFile(index, 'utf8', (err, data) => {
 const loadScripts = () => {
     fs.readFile(worker, 'utf8', (err, data) => {
         if (!err) {
-            let file = data.replace(`$scriptReplacement`, `[${scripts.toString()}];`);
+            let file = data.replace(`$scriptReplacement`, `${scripts.toString()}`);
             fs.writeFile(worker, file, () => null);
         }
     })
