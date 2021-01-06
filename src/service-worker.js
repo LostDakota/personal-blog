@@ -4,6 +4,7 @@ var filesToCache = [
     '/assets/android-icon-192x192.png',
     '/assets/favicon-16x16.png',
     '/assets/favicon-96x96.png',
+    'https://api.mika.house/latest/3',
     $scriptReplacement
 ];
 
