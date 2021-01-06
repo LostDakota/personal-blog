@@ -3,7 +3,7 @@ import { Component} from '@angular/core';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  host: {'id': 'footer'}
+  host: {'id': 'footer', 'class': 'd-none'}
 })
 
 export class FooterComponent {
@@ -13,5 +13,6 @@ year: Number;
 
   ngOnInit() {
     this.year = new Date().getFullYear();
+    setTimeout(() => document.getElementById('footer').classList.toggle('d-none'), 600);
   }
 }
