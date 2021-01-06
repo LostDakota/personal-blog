@@ -9,6 +9,7 @@ var filesToCache = [
     '/assets/icons/linkedin.svg',
     '/assets/icons/twitter.svg',
     '/assets/icons/github.svg',
+    '/assets/icons/lightbulb.svg',
     'https://api.mika.house/latest/3',
     $scriptReplacement
 ];
