@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Post } from '../models/post.model';
 import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  host: {'class': 'container'}
+  host: {'class': 'container'},
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class HomeComponent implements OnInit {
@@ -14,7 +15,8 @@ export class HomeComponent implements OnInit {
   isVisible = false;
 
   constructor(
-    private data: DataService
+    private data: DataService,
+    private cd: ChangeDetectorRef
   ) { };  
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class HomeComponent implements OnInit {
         data => {          
           this.isVisible = true;
           this.posts$ = data;
+          this.cd.detectChanges();
         }
       )
   }

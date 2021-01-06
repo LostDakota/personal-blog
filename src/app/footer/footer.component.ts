@@ -1,18 +1,22 @@
-import { Component} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  host: {'id': 'footer', 'class': 'd-none'}
+  host: {'id': 'footer', 'class': 'd-none'},
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class FooterComponent {
 year: Number;
 
-  constructor() { };
+  constructor(private cd: ChangeDetectorRef) { };
 
   ngOnInit() {
     this.year = new Date().getFullYear();
-    setTimeout(() => document.getElementById('footer').classList.toggle('d-none'), 600);
+    setTimeout(() => {
+      document.getElementById('footer').classList.toggle('d-none')
+      this.cd.detectChanges();
+    }, 600);
   }
 }

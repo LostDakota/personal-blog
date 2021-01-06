@@ -39,7 +39,7 @@
             navigator.serviceWorker.register('/service-worker.js');
         }
     </script>
-    <img loading="lazy" src="/assets/icons/lightbulb.svg" class="lightswitch" onclick="flipTheSwitch()"></div>
+    <img width="30" height="30" loading="lazy" src="/assets/icons/lightbulb.svg" class="lightswitch" onclick="flipTheSwitch()">
     <script>
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
         if (prefersDarkScheme && localStorage.getItem('mode') !== 'light') {
