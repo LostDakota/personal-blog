@@ -38,6 +38,10 @@
                 document.body.classList.add('dark');
             }
         });
+        
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
 
         function flipTheSwitch() {
             const body = document.body;
@@ -54,12 +58,7 @@
 </head>
 
 <body>
-    <app-root id="main"></app-root>
-    <script>
-        if ('serviceWorker' in navigator && 'PushManager' in window) {
-            navigator.serviceWorker.register('/service-worker.js');
-        }
-    </script>
+    <app-root id="main"></app-root>    
     <img width="30" height="30" loading="lazy" src="/assets/icons/lightbulb.svg" class="lightswitch"
         onclick="flipTheSwitch()">
 </body>
