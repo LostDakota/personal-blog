@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Post } from '../models/post.model';
 import { ActivatedRoute } from '@angular/router';
@@ -21,7 +21,8 @@ export class BlogComponent implements OnInit {
     private data: DataService,
     private route: ActivatedRoute,
     private titleService: TitleService,
-    private descriptionService: DescriptionService
+    private descriptionService: DescriptionService,
+    private cd: ChangeDetectorRef
   ) { };
 
   ngOnInit() {
@@ -39,6 +40,7 @@ export class BlogComponent implements OnInit {
             this.isVisible = !this.isVisible;
             this.titleService.setTitle(`Posts tagged with ${this.filter} - Mika House Web Development`);
             this.descriptionService.updateDescription(`These are all of the posts tagged with ${this.filter}.`)
+            this.cd.detectChanges();
           }
         )
     } else {
@@ -48,6 +50,7 @@ export class BlogComponent implements OnInit {
             this.posts$ = data;
             this.isVisible = !this.isVisible;
             this.descriptionService.updateDescription('Here you will find blog posts on Angular, Javascript, Node.js and a bunch of other random things I like.');
+            this.cd.detectChanges();
           }
         )
     }

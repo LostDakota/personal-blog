@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Post } from '../models/post.model';
 import { DataService } from '../services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,7 +9,8 @@ import { ScriptService } from '../services/dom.service';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  host: {'class': 'container'}
+  host: {'class': 'container'},
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class EditComponent implements OnInit {
@@ -39,7 +40,8 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router, 
     private authenticationService: AuthenticationService,
-    private ScriptService: ScriptService
+    private ScriptService: ScriptService,
+    private cd: ChangeDetectorRef
   ) { };
 
   ngOnInit() {
@@ -57,6 +59,7 @@ export class EditComponent implements OnInit {
         data => {
           this.post$ = data;
           this.tempTags = data.tags.join(',');
+          this.cd.detectChanges();
         }
       );
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Post } from '../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,7 +11,8 @@ import { DescriptionService, ScriptService } from '../services/dom.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
   encapsulation: ViewEncapsulation.None,
-  host: {'class': 'container'}
+  host: {'class': 'container'},
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class PostComponent implements OnInit {
@@ -28,7 +29,8 @@ export class PostComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private titleService: TitleService,
     private descriptionService: DescriptionService,
-    private scriptService: ScriptService
+    private scriptService: ScriptService,
+    private cd: ChangeDetectorRef
   ) { };
 
   ngOnInit() {
@@ -40,7 +42,8 @@ export class PostComponent implements OnInit {
           this.post$ = data;
           this.titleService.setTitle(`${data.title} - Mika House Web Development`);
           this.descriptionService.updateDescription(data.description);    
-          this.loadDisqus();      
+          this.loadDisqus();
+          this.cd.detectChanges();
         }
       );
 

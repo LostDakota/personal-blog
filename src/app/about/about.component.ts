@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-import { elementAt } from 'rxjs/operators';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { DescriptionService } from '../services/dom.service';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  host: {'class': 'container'}
+  host: {'class': 'container'},
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class AboutComponent {
@@ -14,12 +13,14 @@ export class AboutComponent {
   imageUrl = ''
 
   constructor(
-    private descriptionService: DescriptionService
+    private descriptionService: DescriptionService,
+    private cd: ChangeDetectorRef
   ) { };
 
   ngOnInit() {
     setTimeout(() => {
       this.isVisible = !this.isVisible;
+      this.cd.detectChanges();
     }, 100);    
 
     if(this.checkBrowserSupport()) {
@@ -28,7 +29,7 @@ export class AboutComponent {
       this.imageUrl = "/assets/drew.jpg";
     }
 
-    this.descriptionService.updateDescription('My name is Drew Mika and I am a full stack developer who is passionate about Javascript and front end. I work fulltime in Sitecore and C# at Hyland Software in Westlake, Ohio.')
+    this.descriptionService.updateDescription('My name is Drew Mika and I am a full stack developer who is passionate about Javascript and front end. I work fulltime in Sitecore and C# at Hyland Software in Westlake, Ohio.');    
   }
 
   checkBrowserSupport(){
