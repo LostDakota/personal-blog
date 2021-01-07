@@ -30,16 +30,6 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" />Uh oh. It seems
         like you have Javascript disabled. *sadface*
     </noscript>
-</head>
-
-<body>
-    <app-root id="main"></app-root>
-    <script>
-        if ('serviceWorker' in navigator && 'PushManager' in window) {
-            navigator.serviceWorker.register('/service-worker.js');
-        }
-    </script>
-    <img width="30" height="30" loading="lazy" src="/assets/icons/lightbulb.svg" class="lightswitch" onclick="flipTheSwitch()">
     <script>
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
         if (prefersDarkScheme && localStorage.getItem('mode') !== 'light') {
@@ -59,6 +49,16 @@
             }
         }
     </script>
+</head>
+
+<body>
+    <app-root id="main"></app-root>
+    <script>
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+    <img width="30" height="30" loading="lazy" src="/assets/icons/lightbulb.svg" class="lightswitch" onclick="flipTheSwitch()">    
 </body>
 
 </html>
