@@ -17,7 +17,7 @@ fs.readFile(index, 'utf8', (err, data) => {
         sources.forEach(source => {
             scripts = source.split('"').filter(c => c.indexOf('.js') > -1).map(c => `"${c}"`);
         });
-        loadScripts();
+        //loadScripts();
 
         const actualFileName = toReplace.split('"').filter(c => c.indexOf('styles.') > -1)[0];
         const filePath = path.resolve(`./dist/developer-blog/${actualFileName}`);
@@ -37,5 +37,5 @@ const loadScripts = () => {
             let file = data.replace(`$scriptReplacement`, `${scripts.toString()}`);
             fs.writeFile(worker, file, () => null);
         }
-    })
+    });
 }

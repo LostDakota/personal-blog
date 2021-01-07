@@ -10,7 +10,7 @@ var filesToCache = [
     '/assets/icons/twitter.svg',
     '/assets/icons/github.svg',
     '/assets/icons/lightbulb.svg',
-    $scriptReplacement
+    // $scriptReplacement
 ];
 
 self.addEventListener('install', function (e) {
