@@ -1,25 +1,4 @@
 var cacheName = "$versionNumber::mikahouse";
-var filesToCache = [
-    'manifest.json',
-    '/assets/android-icon-192x192.png',
-    '/assets/favicon-16x16.png',
-    '/assets/favicon-32x32.png',
-    '/assets/favicon-96x96.png',
-    '/assets/icons/tag.svg',
-    '/assets/icons/linkedin.svg',
-    '/assets/icons/twitter.svg',
-    '/assets/icons/github.svg',
-    '/assets/icons/lightbulb.svg',
-    // $scriptReplacement
-];
-
-self.addEventListener('install', function (e) {
-    e.waitUntil(
-        caches.open(cacheName).then(function (cache) {
-            return cache.addAll(filesToCache);
-        })
-    );
-});
 
 self.addEventListener('fetch', function (event) {
     event.respondWith(
