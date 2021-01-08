@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit {
   ) { };  
 
   ngOnInit() {
-    setTimeout(() => {
-      this.data.getLatestPosts()
+    this.data.getLatestPosts()
       .subscribe(
         data => {          
           this.isVisible = true;
@@ -29,6 +28,5 @@ export class HomeComponent implements OnInit {
           this.cd.detectChanges();
         }
       )
-    }, 600);
   }
 }
